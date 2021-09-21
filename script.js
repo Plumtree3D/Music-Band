@@ -47,6 +47,12 @@
 
 // }
 
+
+//on s'en fout du dessus
+
+
+
+//on chope les genres
 let genresHtml = document.getElementById('genreList');
 
 var myOptions = { method: 'GET',
@@ -75,11 +81,11 @@ catch (err) {console.log(err);}
 
 
 
+//on chope les artistes
+let chartListArtists = document.getElementById('chartListArtists')
 
-let chartHtml = document.getElementById('chartList')
-
-const deezerTop = fetch("https://api.deezer.com/chart", myOptions);
-deezerTop
+const deezerTopArtist = fetch("https://api.deezer.com/chart", myOptions);
+deezerTopArtist
 .then(async(responseData)=>{
 // console.log(responseData);
 const response = await responseData.json();
@@ -87,10 +93,38 @@ console.log(response);
 try{
     for (i=0; i<=10; i++){
 const chartName = "<span>"+response.artists.data[i].name+"</span>";
-const chartPicture = '<img src="'+response.artists.data[i].picture+'">'; 
-let chartItem = document.createElement("div");
-chartHtml.appendChild(chartItem);
-chartItem.innerHTML = chartPicture+chartName;
+const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">'; 
+let chartItemArtist = document.createElement("div");
+chartListArtists.appendChild(chartItemArtist);
+chartItemArtist.innerHTML = chartPicture+chartName;
+// document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
+}}
+catch (err) {console.log(err);}
+})
+.catch((err) =>{ console.log(err)});
+
+
+
+
+
+
+//on chope les albums, on se répète par rapport aux artistes, 
+let chartListAlbums = document.getElementById('chartListAlbums')
+
+const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
+deezerTopAlbum
+.then(async(responseData)=>{
+// console.log(responseData);
+const response = await responseData.json();
+console.log(response);
+try{
+    for (i=0; i<=10; i++){
+const chartAlbum = "<span>"+response.albums.data[i].title+" </span>";
+const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
+const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
+let chartItemAlbum = document.createElement("div");
+chartListAlbums.appendChild(chartItemAlbum);
+chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
 // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
 }}
 catch (err) {console.log(err);}
