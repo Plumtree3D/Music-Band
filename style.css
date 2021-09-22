@@ -1,0 +1,81 @@
+
+body{
+    background-color: #16151A;
+    color: white;
+}
+nav{
+    background-color: white;
+    height: 64px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    color: #3BC8E7;
+}
+h1{
+    font-size: 96px;
+}
+span{
+    color: #3BC8E7;  
+}
+button{
+    border: 3px solid #3BC8E7;
+    box-sizing: border-box;
+    width: 236px;
+    height: 40px;
+}
+header{
+    display: flex;
+    align-items: center;
+    background-image: url(./img/image3.jpg);
+    height: 70vh;
+}
+header div{
+
+    width: 40vw;
+
+}
+#genres {
+}
+#genreList{
+    display: flex;
+    
+}
+#genreList div{
+    margin: 23px auto;
+}
+
+#top10{
+    display: flex;
+}
+#chartListArtists{
+display: flex;
+flex-direction: column;
+margin: 15px;
+}
+#chartListAlbums{
+display: flex;
+flex-direction: column;
+margin: 15px;
+}
+
+
+/* ça marche pas (encore) */
+#chartListAlbums div::after, #chartListArtists div::after{
+    content: '';
+    flex: 1 1 auto; /* the first digint is 'flex-grow: 1', helps elemet to occupy all free space */ 
+    border-bottom: solid 1px #c4c4c4;
+}
+
+
+
+
+footer{
+    display: flex;
+}
+footer div{
+    width: 33%;
+}
+
+
+
+
