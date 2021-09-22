@@ -1,3 +1,8 @@
+*{
+   box-sizing: border-box;
+   border: 1px solid lightseagreen; 
+}
+
 
 body{
     background-color: #16151A;
@@ -13,6 +18,10 @@ nav{
 }
 h1{
     font-size: 96px;
+}
+h2{
+    text-transform: uppercase;
+
 }
 span{
     color: #3BC8E7;  
@@ -34,14 +43,16 @@ header div{
     width: 40vw;
 
 }
-#genres {
-}
+/* #genres {
+    
+} */
 #genreList{
     display: flex;
-    
+    width: 500px;
+
 }
 #genreList div{
-    margin: 23px auto;
+    padding: 23px auto;
 }
 
 #top10{
@@ -66,6 +77,11 @@ margin: 15px;
     border-bottom: solid 1px #c4c4c4;
 }
 
+#artistMoment{
+    display: flex;
+    height: 70vh;
+    width: 100%;
+}
 
 
 
