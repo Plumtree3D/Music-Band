@@ -15,14 +15,11 @@
 
 body{
     font-family: 'Urbanist', sans-serif;
-    
     background-color: #1a1515;
-
     color: white;
     max-width: 1440px;
     margin: 0;
 }
-
 nav {
     background-color: white;
     height: 64px;
@@ -31,32 +28,28 @@ nav {
     top: 0;
     color: #3BC8E7;
 }
-
 h1 {
     font-size: 96px;
-
+}
 span{
     color: #3BC8E7;  
-=======
+}
 
 span {
     color: #3BC8E7;
 }
-
 button {
     border: 3px solid #3BC8E7;
     box-sizing: border-box;
     width: 236px;
     height: 40px;
 }
-
 header {
     display: flex;
     align-items: center;
     background-image: url(./img/image3.jpg);
     height: 70vh;
 }
-
 header div{
     width: 40vw;
 }
@@ -69,10 +62,7 @@ header div{
     justify-content: space-evenly;
     width: 100%;
     overflow: hidden;
-
-
 }
-
 #genreList div img {
     width: 145px;
     margin: 10px;
@@ -83,50 +73,34 @@ header div{
     color: white;
     font-weight: 400;
 }
-
 #top10 {
     display: flex;
 }
-
-
 #chartListArtists{
 display: flex;
 flex-direction: column;
 margin: 15px;
-
 }
-
 #chartListAlbums {
     display: flex;
     flex-direction: column;
     margin: 15px;
 }
-
-
 /* ça marche pas (encore) */
-
 #chartListAlbums div, #chartListArtists div{
 border-bottom: rgb(143, 143, 143) solid 1px;
-
 }
-
 #artistMoment{
     display: flex;
     height: 70vh;
     width: 100%;
 }
-
-
-
 footer {
     display: flex;
 }
-
 footer div {
     width: 33%;
 }
-
-
 /* CSS Tommy */
 
 
