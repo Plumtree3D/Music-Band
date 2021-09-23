@@ -56,6 +56,8 @@
 let genresHtml = document.getElementById('genreList');
 
 var myOptions = { method: 'GET',
+                Headers: 'Access-Control-Allow-Origin: *',
+                referrerPolicy: 'origin-when-cross-origin',
                mode: 'cors',
                cache: 'default' };
 const deezerGenre = fetch("https://api.deezer.com/genre", myOptions);
@@ -70,6 +72,7 @@ const genreName = "<span>"+response.data[i].name+"</span>";
 const genrePicture = '<img src="'+response.data[i].picture+'">'; 
 let genreItem = document.createElement("div");
 genresHtml.appendChild(genreItem);
+genreItem.className = "slider";
 genreItem.innerHTML = genrePicture+genreName;
 // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
 }}
@@ -92,43 +95,168 @@ const response = await responseData.json();
 console.log(response);
 try{
     for (i=0; i<=10; i++){
-const chartName = "<span>"+response.artists.data[i].name+"</span>";
+const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
+const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
 const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">'; 
 let chartItemArtist = document.createElement("div");
+
 chartListArtists.appendChild(chartItemArtist);
-chartItemArtist.innerHTML = chartPicture+chartName;
+chartItemArtist.classList.add('artist');
+chartItemArtist.innerHTML = chartPicture+chartSong+chartName;
 // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
-}}
-catch (err) {console.log(err);}
-})
-.catch((err) =>{ console.log(err)});
 
-
-
-
-
-
-//on chope les albums, on se répète par rapport aux artistes, 
-let chartListAlbums = document.getElementById('chartListAlbums')
-
-const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
-deezerTopAlbum
-.then(async(responseData)=>{
-// console.log(responseData);
-const response = await responseData.json();
-console.log(response);
-try{
-    for (i=0; i<=10; i++){
-const chartAlbum = "<span>"+response.albums.data[i].title+" </span>";
+const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
 const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
 const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
 let chartItemAlbum = document.createElement("div");
 chartListAlbums.appendChild(chartItemAlbum);
+chartItemAlbum.classList.add('album');
 chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
-// document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
-}}
+}
+
+}
 catch (err) {console.log(err);}
 })
 .catch((err) =>{ console.log(err)});
 
 
+
+
+
+
+// //on chope les albums, on se répète par rapport aux artistes, faudrait voir à mieux optimiser tout ça
+// let chartListAlbums = document.getElementById('chartListAlbums')
+
+// const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
+// deezerTopAlbum
+// .then(async(responseData)=>{
+// // console.log(responseData);
+// const response = await responseData.json();
+// console.log(response);
+// try{
+//     for (i=0; i<=10; i++){
+// const chartAlbum = "<span>"+response.albums.data[i].title+" </span>";
+// const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
+// const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
+// let chartItemAlbum = document.createElement("div");
+// chartListAlbums.appendChild(chartItemAlbum);
+// chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
+// // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
+// }}
+// catch (err) {console.log(err);}
+// })
+// .catch((err) =>{ console.log(err)});
+
+
+
+
+let artistMoment = document.getElementById('artistMoment')
+
+const deezerartistMoment = fetch("https://api.deezer.com/chart", myOptions);
+deezerartistMoment
+.then(async(responseData)=>{
+// console.log(responseData);
+const response = await responseData.json();
+console.log(response);
+try{   
+//ici on chope l'artiste du moment
+
+const artMoment = response.artists.data[0].name;
+console.log(artMoment);
+const artMomentPicture = response.artists.data[0].picture_xl;
+let artMomentDiv = document.createElement("div");
+document.getElementById('artistMoment').appendChild(artMomentDiv);
+document.getElementById('artistMoment').style.cssText = "background: url('"+artMomentPicture+"');";
+artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment"+artMoment+"</h2>";
+}
+catch (err) {console.log(err);}
+})
+.catch((err) =>{ console.log(err)});
+
+
+
+
+
+
+
+
+
+
+//ici on chope l'artiste du moment
+
+// const artMoment = response.artists.data[0].name;
+// console.log(artMoment);
+// const artMomentPicture = response.artists.data[0].picture_xl;
+// let artMomentDiv = document.createElement("div");
+// document.getElementById('artistMoment').appendChild(artMomentDiv);
+// artMomentDiv.style.background = artMomentPicture;
+// artMomentDiv.innerHTML = '<h2>'+artMoment+'</h2>';
+
+
+
+
+
+
+
+//ici on drag le slide
+
+       // Slider dragging
+
+       const slider = document.querySelector('.slider');
+       let isDown = false;
+       let startX;
+       let scrollLeft;
+       
+       slider.addEventListener('mousedown', (e) => {
+           isDown = true;
+           slider.classList.add('active');
+           startX = e.pageX - slider.offsetLeft;
+           scrollLeft = slider.scrollLeft;
+           cancelMomentumTracking();
+       });
+       slider.addEventListener('mouseleave', () => {
+           isDown = false;
+           slider.classList.remove('active');
+       });
+       
+       slider.addEventListener('mouseup', () => {
+           isDown = false;
+           slider.classList.remove('active');
+           beginMomentumTracking();
+       });
+       
+       slider.addEventListener('mousemove', (e) => {
+           if(!isDown) return;
+           e.preventDefault();
+           const x = e.pageX - slider.offsetLeft;
+           const walk = (x - startX); //scroll-fast
+           var prevScrollLeft = slider.scrollLeft;
+           slider.scrollLeft = scrollLeft - walk;
+           velX = slider.scrollLeft - prevScrollLeft;
+       });
+       
+       // Momentum 
+       
+       var velX = 0;
+       var momentumID;
+       
+       slider.addEventListener('wheel', (e) => {
+           cancelMomentumTracking();
+       });  
+       
+       function beginMomentumTracking(){
+           cancelMomentumTracking();
+           momentumID = requestAnimationFrame(momentumLoop);
+       }
+       
+       function cancelMomentumTracking(){
+           cancelAnimationFrame(momentumID);
+       }
+       
+       function momentumLoop(){
+           slider.scrollLeft += velX * 2;
+           velX *= 0.95; 
+           if (Math.abs(velX) > 0.5){
+               momentumID = requestAnimationFrame(momentumLoop);
+           }
+       }
