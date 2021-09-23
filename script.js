@@ -84,8 +84,11 @@ catch (err) {console.log(err);}
 
 
 
-//on chope les artistes
+//on chope les artistes, les albums, les playlists  et les émissions
 let chartListArtists = document.getElementById('chartListArtists')
+let chartListAlbums = document.getElementById('chartListAlbums')
+let topPlaylists = document.getElementById('topPlaylists')
+let topPodcasts = document.getElementById('topPodcasts')
 
 const deezerTopArtist = fetch("https://api.deezer.com/chart", myOptions);
 deezerTopArtist
@@ -94,12 +97,11 @@ deezerTopArtist
 const response = await responseData.json();
 console.log(response);
 try{
-    for (i=0; i<=10; i++){
+    for (i=0; i<=20; i++){
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
-const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">'; 
+const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">';
 let chartItemArtist = document.createElement("div");
-
 chartListArtists.appendChild(chartItemArtist);
 chartItemArtist.classList.add('artist');
 chartItemArtist.innerHTML = chartPicture+chartSong+chartName;
@@ -108,10 +110,15 @@ chartItemArtist.innerHTML = chartPicture+chartSong+chartName;
 const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
 const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
 const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
+
 let chartItemAlbum = document.createElement("div");
 chartListAlbums.appendChild(chartItemAlbum);
 chartItemAlbum.classList.add('album');
 chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
+
+
+
+
 }
 
 }
@@ -127,25 +134,24 @@ catch (err) {console.log(err);}
 // //on chope les albums, on se répète par rapport aux artistes, faudrait voir à mieux optimiser tout ça
 // let chartListAlbums = document.getElementById('chartListAlbums')
 
-// const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
-// deezerTopAlbum
-// .then(async(responseData)=>{
-// // console.log(responseData);
-// const response = await responseData.json();
-// console.log(response);
-// try{
-//     for (i=0; i<=10; i++){
-// const chartAlbum = "<span>"+response.albums.data[i].title+" </span>";
-// const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
-// const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
-// let chartItemAlbum = document.createElement("div");
-// chartListAlbums.appendChild(chartItemAlbum);
-// chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
-// // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
-// }}
-// catch (err) {console.log(err);}
-// })
-// .catch((err) =>{ console.log(err)});
+const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
+deezerTopAlbum
+.then(async(responseData)=>{
+// console.log(responseData);
+const response = await responseData.json();
+console.log(response);
+try{
+    for (i=0; i<=10; i++){
+        const chartPlaylist = "<p>"+response.playlists.data[i].title+" </p>";
+        const chartPicturePlaylist = '<img src="'+response.playlists.data[i].picture_medium+'">';
+        let topPlaylist = document.createElement("div");
+        topPlaylists.appendChild(topPlaylist);
+        topPlaylist.classList.add('playlist');
+        topPlaylist.innerHTML = chartPicturePlaylist+chartPlaylist;
+}}
+catch (err) {console.log(err);}
+})
+.catch((err) =>{ console.log(err)});
 
 
 
@@ -202,61 +208,61 @@ catch (err) {console.log(err);}
 
        // Slider dragging
 
-       const slider = document.querySelector('.slider');
-       let isDown = false;
-       let startX;
-       let scrollLeft;
+    //    const slider = document.querySelector('.slider');
+    //    let isDown = false;
+    //    let startX;
+    //    let scrollLeft;
        
-       slider.addEventListener('mousedown', (e) => {
-           isDown = true;
-           slider.classList.add('active');
-           startX = e.pageX - slider.offsetLeft;
-           scrollLeft = slider.scrollLeft;
-           cancelMomentumTracking();
-       });
-       slider.addEventListener('mouseleave', () => {
-           isDown = false;
-           slider.classList.remove('active');
-       });
+    //    slider.addEventListener('mousedown', (e) => {
+    //        isDown = true;
+    //        slider.classList.add('active');
+    //        startX = e.pageX - slider.offsetLeft;
+    //        scrollLeft = slider.scrollLeft;
+    //        cancelMomentumTracking();
+    //    });
+    //    slider.addEventListener('mouseleave', () => {
+    //        isDown = false;
+    //        slider.classList.remove('active');
+    //    });
        
-       slider.addEventListener('mouseup', () => {
-           isDown = false;
-           slider.classList.remove('active');
-           beginMomentumTracking();
-       });
+    //    slider.addEventListener('mouseup', () => {
+    //        isDown = false;
+    //        slider.classList.remove('active');
+    //        beginMomentumTracking();
+    //    });
        
-       slider.addEventListener('mousemove', (e) => {
-           if(!isDown) return;
-           e.preventDefault();
-           const x = e.pageX - slider.offsetLeft;
-           const walk = (x - startX); //scroll-fast
-           var prevScrollLeft = slider.scrollLeft;
-           slider.scrollLeft = scrollLeft - walk;
-           velX = slider.scrollLeft - prevScrollLeft;
-       });
+    //    slider.addEventListener('mousemove', (e) => {
+    //        if(!isDown) return;
+    //        e.preventDefault();
+    //        const x = e.pageX - slider.offsetLeft;
+    //        const walk = (x - startX); //scroll-fast
+    //        var prevScrollLeft = slider.scrollLeft;
+    //        slider.scrollLeft = scrollLeft - walk;
+    //        velX = slider.scrollLeft - prevScrollLeft;
+    //    });
        
-       // Momentum 
+    //    // Momentum 
        
-       var velX = 0;
-       var momentumID;
+    //    var velX = 0;
+    //    var momentumID;
        
-       slider.addEventListener('wheel', (e) => {
-           cancelMomentumTracking();
-       });  
+    //    slider.addEventListener('wheel', (e) => {
+    //        cancelMomentumTracking();
+    //    });  
        
-       function beginMomentumTracking(){
-           cancelMomentumTracking();
-           momentumID = requestAnimationFrame(momentumLoop);
-       }
+    //    function beginMomentumTracking(){
+    //        cancelMomentumTracking();
+    //        momentumID = requestAnimationFrame(momentumLoop);
+    //    }
        
-       function cancelMomentumTracking(){
-           cancelAnimationFrame(momentumID);
-       }
+    //    function cancelMomentumTracking(){
+    //        cancelAnimationFrame(momentumID);
+    //    }
        
-       function momentumLoop(){
-           slider.scrollLeft += velX * 2;
-           velX *= 0.95; 
-           if (Math.abs(velX) > 0.5){
-               momentumID = requestAnimationFrame(momentumLoop);
-           }
-       }
+    //    function momentumLoop(){
+    //        slider.scrollLeft += velX * 2;
+    //        velX *= 0.95; 
+    //        if (Math.abs(velX) > 0.5){
+    //            momentumID = requestAnimationFrame(momentumLoop);
+    //        }
+    //    }
