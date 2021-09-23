@@ -49,7 +49,7 @@ console.log(response);
 try{
     for (i=0; i<10; i++){        
 //on chope les artistes
-const count = i+1;
+const count = (i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
 const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">';
