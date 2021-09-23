@@ -52,12 +52,14 @@ try{
 const count = (i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
-const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">';
+const chartPicture = '<img src="'+response.tracks.data[i].artist.picture_small+'">';
 let chartItemArtist = document.createElement("div");
 chartListArtists.appendChild(chartItemArtist);
 chartItemArtist.classList.add('artist');
 chartItemArtist.innerHTML = count+chartPicture+chartSong+chartName;
+chartItemArtist.addEventListener('click', function () {
 
+})
 
 //on chope les albums
 const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
