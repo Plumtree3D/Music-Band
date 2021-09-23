@@ -1,54 +1,6 @@
-// var myInit = { method: 'GET',
-//                mode: 'no-cors',
-//                cache: 'default' };
 
+//bonjour et bienvenue sur le Javascript
 
-
-// let deezer = fetch("https://ex1.o7planning.com/_testdatas_/simple-text-data.txt", myInit)
-// .then(response => response.json())
-// .then(response => console.log(JSON.stringify(response)))
-// .catch(error => console.log("Erreur : blaaah :" + error));
-
-
-
-// A URL returns JSON data.
-// var url = "https://api.deezer.com/genre/2";
-
-
-// function doGetJSON()  {
-
-//   // Call fetch(url) with default options.
-//   // It returns a Promise object:
-//   var aPromise = fetch(url);
-
-//   // Work with Promise object:
-//   aPromise
-//     .then(function(response) {
-//         console.log("OK! Server returns a response object:");
-//         console.log(response);
-
-//         if(!response.ok) {
-//            throw new Error("HTTP error, status = " + response.status);
-//         } 
-//         // Get JSON Promise from response object:
-//         var myJSON_promise = response.json();
-
-//         // Returns a Promise object.
-//         return myJSON_promise;
-//     })
-//     .then(function(myJSON) {
-//         console.log("OK! JSON:");
-//         console.log(myJSON);
-//     })
-//     .catch(function(error)  {
-//         console.log("Noooooo! Something error:");
-//         console.log(error);
-//     });
-
-// }
-
-
-//on s'en fout du dessus
 
 
 
@@ -73,7 +25,6 @@ const genrePicture = '<img src="'+response.data[i].picture+'">';
 let genreItem = document.createElement("div");
 genresHtml.appendChild(genreItem);
 genreItem.innerHTML = genrePicture+genreName;
-// document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
 }}
 catch (err) {console.log(err);}
 })
@@ -83,8 +34,11 @@ catch (err) {console.log(err);}
 
 
 
-//on chope les artistes
+//on chope les artistes, les albums, les playlists  et les émissions
 let chartListArtists = document.getElementById('chartListArtists')
+let chartListAlbums = document.getElementById('chartListAlbums')
+let topPlaylists = document.getElementById('topPlaylists')
+let topPodcasts = document.getElementById('topPodcasts')
 
 const deezerTopArtist = fetch("https://api.deezer.com/chart", myOptions);
 deezerTopArtist
@@ -93,24 +47,26 @@ deezerTopArtist
 const response = await responseData.json();
 console.log(response);
 try{
-    for (i=0; i<=10; i++){
+    for (i=0; i<10; i++){        
+//on chope les artistes
+const count = (i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
-const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">'; 
+const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">';
 let chartItemArtist = document.createElement("div");
-
 chartListArtists.appendChild(chartItemArtist);
 chartItemArtist.classList.add('artist');
-chartItemArtist.innerHTML = chartPicture+chartSong+chartName;
-// document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
+chartItemArtist.innerHTML = count+chartPicture+chartSong+chartName;
 
+
+//on chope les albums
 const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
 const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
-const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
+const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">';
 let chartItemAlbum = document.createElement("div");
 chartListAlbums.appendChild(chartItemAlbum);
 chartItemAlbum.classList.add('album');
-chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
+chartItemAlbum.innerHTML = count+chartPictureAlbum+chartAlbum+chartArtist;
 }
 
 }
@@ -126,25 +82,40 @@ catch (err) {console.log(err);}
 // //on chope les albums, on se répète par rapport aux artistes, faudrait voir à mieux optimiser tout ça
 // let chartListAlbums = document.getElementById('chartListAlbums')
 
-// const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
-// deezerTopAlbum
-// .then(async(responseData)=>{
-// // console.log(responseData);
-// const response = await responseData.json();
-// console.log(response);
-// try{
-//     for (i=0; i<=10; i++){
-// const chartAlbum = "<span>"+response.albums.data[i].title+" </span>";
-// const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
-// const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
-// let chartItemAlbum = document.createElement("div");
-// chartListAlbums.appendChild(chartItemAlbum);
-// chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
-// // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
-// }}
-// catch (err) {console.log(err);}
-// })
-// .catch((err) =>{ console.log(err)});
+const deezerTop = fetch("https://api.deezer.com/chart", myOptions);
+deezerTop
+.then(async(responseData)=>{
+// console.log(responseData);
+const response = await responseData.json();
+console.log(response);
+try{
+    for (i=0; i<=10; i++){
+
+        //on crée 
+        const chartPlaylist = "<p>"+response.playlists.data[i].title+" </p>";
+        const chartPicturePlaylist = '<img src="'+response.playlists.data[i].picture_medium+'">';
+        let topPlaylist = document.createElement("div");
+        topPlaylists.appendChild(topPlaylist);
+        topPlaylist.classList.add('playlist');
+        topPlaylist.innerHTML = chartPicturePlaylist+chartPlaylist;
+
+
+
+        const chartPodcast = "<p>"+response.podcasts.data[i].title+" </p>";
+        const chartPicturePodcast = '<img src="'+response.podcasts.data[i].picture_medium+'">';
+        let topPodcast = document.createElement("div");
+        topPodcasts.appendChild(topPodcast);
+        topPodcast.classList.add('playlist');
+        topPodcast.innerHTML = chartPicturePodcast+chartPodcast;
+
+
+
+
+        
+}}
+catch (err) {console.log(err);}
+})
+.catch((err) =>{ console.log(err)});
 
 
 
@@ -171,31 +142,3 @@ artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment"+artMoment+"</h2>";
 catch (err) {console.log(err);}
 })
 .catch((err) =>{ console.log(err)});
-
-
-
-
-
-
-
-
-
-
-//ici on chope l'artiste du moment
-
-// const artMoment = response.artists.data[0].name;
-// console.log(artMoment);
-// const artMomentPicture = response.artists.data[0].picture_xl;
-// let artMomentDiv = document.createElement("div");
-// document.getElementById('artistMoment').appendChild(artMomentDiv);
-// artMomentDiv.style.background = artMomentPicture;
-// artMomentDiv.innerHTML = '<h2>'+artMoment+'</h2>';
-
-
-
-
-
-
-
-//ici on drag le slide
-
