@@ -31,7 +31,8 @@ header {
     display: flex;
     align-items: center;
     background-image: url(./img/image3.jpg);
-    height: 70vh;
+    height: 80vh;
+    
 }
 
 header div {
@@ -160,19 +161,32 @@ footer div {
 .leftFooter {
 
 
-    background: linear-gradient(180deg, rgb(22 21 26), rgb(107 107 107));
+    background: linear-gradient(180deg, rgb(22 21 26), rgb(99 99 99));
 
 
 }
 
 .middleFooter {
 
-    background: linear-gradient(180deg, rgb(22 21 26), rgb(107 107 107));
+    background: linear-gradient(180deg, rgb(22 21 26), rgb(99 99 99));
 
 
 }
 
 .rightFooter {
 
-    background: linear-gradient(180deg, rgb(22 21 26), rgb(107 107 107));
+    background: linear-gradient(180deg, rgb(22 21 26), rgb(99 99 99));
+}
+
+.casque {
+
+    position: absolute;
+    width: 29px;
+    height: 29px;
+    left: 1188px;
+    top: 17px;
+    background: #3BC8E7;
+    border-radius: 2px;
+
+
 }
