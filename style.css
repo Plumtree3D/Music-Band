@@ -1,4 +1,5 @@
 
+
 /* //////////////////////////////////
 
 
@@ -16,11 +17,13 @@ body{
     font-family: 'Urbanist', sans-serif;
     
     background-color: #1a1515;
+
     color: white;
     max-width: 1440px;
     margin: 0;
 }
-nav{
+
+nav {
     background-color: white;
     height: 64px;
     width: 100%;
@@ -28,28 +31,32 @@ nav{
     top: 0;
     color: #3BC8E7;
 }
-h1{
-    font-size: 96px;
-}
-h2{
-    text-transform: uppercase;
 
-}
+h1 {
+    font-size: 96px;
+
 span{
     color: #3BC8E7;  
+=======
+
+span {
+    color: #3BC8E7;
 }
-button{
+
+button {
     border: 3px solid #3BC8E7;
     box-sizing: border-box;
     width: 236px;
     height: 40px;
 }
-header{
+
+header {
     display: flex;
     align-items: center;
     background-image: url(./img/image3.jpg);
     height: 70vh;
 }
+
 header div{
     width: 40vw;
 }
@@ -75,28 +82,32 @@ header div{
     margin: 10px;
     color: white;
     font-weight: 400;
-
 }
 
-#top10{
+#top10 {
     display: flex;
 }
+
 
 #chartListArtists{
 display: flex;
 flex-direction: column;
 margin: 15px;
+
 }
-#chartListAlbums{
-display: flex;
-flex-direction: column;
-margin: 15px;
+
+#chartListAlbums {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
 }
 
 
 /* ça marche pas (encore) */
+
 #chartListAlbums div, #chartListArtists div{
 border-bottom: rgb(143, 143, 143) solid 1px;
+
 }
 
 #artistMoment{
@@ -107,10 +118,73 @@ border-bottom: rgb(143, 143, 143) solid 1px;
 
 
 
-footer{
+footer {
     display: flex;
 }
-footer div{
+
+footer div {
     width: 33%;
 }
 
+
+/* CSS Tommy */
+
+
+.menuburger {
+
+    position: absolute;
+    width: 65px;
+    height: 64px;
+    left: 0px;
+    top: 0px;
+    background: #3BC8E7;
+}
+
+.musicband {
+
+    position: absolute;
+    width: 205px;
+    height: 30px;
+    left: 88px;
+    top: 19px;
+
+
+
+}
+
+.searchbar {
+
+    position: absolute;
+    width: 358px;
+    height: 38px;
+    left: 863px;
+    top: 13px;
+    background: #F0F5F9;
+
+
+
+}
+
+.avatar {
+
+    width: 31px;
+    height: 31px;
+    background-image: url("https://placeimg.com/160/160/any");
+    background-size: contain;
+    border-radius: 50%;
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    left: calc(50% - 31px/2 + 576.5px);
+    top: 17px;
+}
+
+.user {
+
+    position: absolute;
+    width: 37px;
+    height: 17px;
+    left: calc(50% - 37px/2 + 628.5px);
+    top: 24px;
+
+  }
