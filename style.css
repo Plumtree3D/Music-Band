@@ -110,6 +110,8 @@ footer div {
     height: 30px;
     left: 88px;
     top: 19px;
+    display: flex;
+    align-items: center;
 
 
 
@@ -153,4 +155,24 @@ footer div {
     left: calc(50% - 37px/2 + 628.5px);
     top: 24px;
 
+}
+
+.leftFooter {
+
+
+    background: linear-gradient(180deg, rgb(22 21 26), rgb(107 107 107));
+
+
+}
+
+.middleFooter {
+
+    background: linear-gradient(180deg, rgb(22 21 26), rgb(107 107 107));
+
+
+}
+
+.rightFooter {
+
+    background: linear-gradient(180deg, rgb(22 21 26), rgb(107 107 107));
 }

@@ -15,7 +15,7 @@
 <body>
     <nav>
         <div class="menuburger"></div>
-        <div class="musicband">Music Band </br> La musique au bout des doigts</div>
+        <div class="musicband">  Music Band </br> La musique au bout des doigts</div>
         <div class="searchbar">Recherchez, écoutez...</div>
         <div class="avatar"></div>
         <div class="user">Alain</div>
