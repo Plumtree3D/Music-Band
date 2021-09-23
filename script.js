@@ -1,54 +1,6 @@
-// var myInit = { method: 'GET',
-//                mode: 'no-cors',
-//                cache: 'default' };
 
+//bonjour et bienvenue sur le Javascript
 
-
-// let deezer = fetch("https://ex1.o7planning.com/_testdatas_/simple-text-data.txt", myInit)
-// .then(response => response.json())
-// .then(response => console.log(JSON.stringify(response)))
-// .catch(error => console.log("Erreur : blaaah :" + error));
-
-
-
-// A URL returns JSON data.
-// var url = "https://api.deezer.com/genre/2";
-
-
-// function doGetJSON()  {
-
-//   // Call fetch(url) with default options.
-//   // It returns a Promise object:
-//   var aPromise = fetch(url);
-
-//   // Work with Promise object:
-//   aPromise
-//     .then(function(response) {
-//         console.log("OK! Server returns a response object:");
-//         console.log(response);
-
-//         if(!response.ok) {
-//            throw new Error("HTTP error, status = " + response.status);
-//         } 
-//         // Get JSON Promise from response object:
-//         var myJSON_promise = response.json();
-
-//         // Returns a Promise object.
-//         return myJSON_promise;
-//     })
-//     .then(function(myJSON) {
-//         console.log("OK! JSON:");
-//         console.log(myJSON);
-//     })
-//     .catch(function(error)  {
-//         console.log("Noooooo! Something error:");
-//         console.log(error);
-//     });
-
-// }
-
-
-//on s'en fout du dessus
 
 
 
@@ -72,9 +24,7 @@ const genreName = "<span>"+response.data[i].name+"</span>";
 const genrePicture = '<img src="'+response.data[i].picture+'">'; 
 let genreItem = document.createElement("div");
 genresHtml.appendChild(genreItem);
-genreItem.className = "slider";
 genreItem.innerHTML = genrePicture+genreName;
-// document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
 }}
 catch (err) {console.log(err);}
 })
@@ -97,28 +47,26 @@ deezerTopArtist
 const response = await responseData.json();
 console.log(response);
 try{
-    for (i=0; i<=20; i++){
+    for (i=0; i<10; i++){        
+//on chope les artistes
+const count = i+1;
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
 const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">';
 let chartItemArtist = document.createElement("div");
 chartListArtists.appendChild(chartItemArtist);
 chartItemArtist.classList.add('artist');
-chartItemArtist.innerHTML = chartPicture+chartSong+chartName;
-// document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
+chartItemArtist.innerHTML = count+chartPicture+chartSong+chartName;
 
+
+//on chope les albums
 const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
 const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
-const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
-
+const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">';
 let chartItemAlbum = document.createElement("div");
 chartListAlbums.appendChild(chartItemAlbum);
 chartItemAlbum.classList.add('album');
-chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
-
-
-
-
+chartItemAlbum.innerHTML = count+chartPictureAlbum+chartAlbum+chartArtist;
 }
 
 }
@@ -134,20 +82,36 @@ catch (err) {console.log(err);}
 // //on chope les albums, on se répète par rapport aux artistes, faudrait voir à mieux optimiser tout ça
 // let chartListAlbums = document.getElementById('chartListAlbums')
 
-const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
-deezerTopAlbum
+const deezerTop = fetch("https://api.deezer.com/chart", myOptions);
+deezerTop
 .then(async(responseData)=>{
 // console.log(responseData);
 const response = await responseData.json();
 console.log(response);
 try{
     for (i=0; i<=10; i++){
+
+        //on crée 
         const chartPlaylist = "<p>"+response.playlists.data[i].title+" </p>";
         const chartPicturePlaylist = '<img src="'+response.playlists.data[i].picture_medium+'">';
         let topPlaylist = document.createElement("div");
         topPlaylists.appendChild(topPlaylist);
         topPlaylist.classList.add('playlist');
         topPlaylist.innerHTML = chartPicturePlaylist+chartPlaylist;
+
+
+
+        const chartPodcast = "<p>"+response.podcasts.data[i].title+" </p>";
+        const chartPicturePodcast = '<img src="'+response.podcasts.data[i].picture_medium+'">';
+        let topPodcast = document.createElement("div");
+        topPodcasts.appendChild(topPodcast);
+        topPodcast.classList.add('playlist');
+        topPodcast.innerHTML = chartPicturePodcast+chartPodcast;
+
+
+
+
+        
 }}
 catch (err) {console.log(err);}
 })
@@ -202,67 +166,3 @@ catch (err) {console.log(err);}
 
 
 
-
-
-//ici on drag le slide
-
-       // Slider dragging
-
-    //    const slider = document.querySelector('.slider');
-    //    let isDown = false;
-    //    let startX;
-    //    let scrollLeft;
-       
-    //    slider.addEventListener('mousedown', (e) => {
-    //        isDown = true;
-    //        slider.classList.add('active');
-    //        startX = e.pageX - slider.offsetLeft;
-    //        scrollLeft = slider.scrollLeft;
-    //        cancelMomentumTracking();
-    //    });
-    //    slider.addEventListener('mouseleave', () => {
-    //        isDown = false;
-    //        slider.classList.remove('active');
-    //    });
-       
-    //    slider.addEventListener('mouseup', () => {
-    //        isDown = false;
-    //        slider.classList.remove('active');
-    //        beginMomentumTracking();
-    //    });
-       
-    //    slider.addEventListener('mousemove', (e) => {
-    //        if(!isDown) return;
-    //        e.preventDefault();
-    //        const x = e.pageX - slider.offsetLeft;
-    //        const walk = (x - startX); //scroll-fast
-    //        var prevScrollLeft = slider.scrollLeft;
-    //        slider.scrollLeft = scrollLeft - walk;
-    //        velX = slider.scrollLeft - prevScrollLeft;
-    //    });
-       
-    //    // Momentum 
-       
-    //    var velX = 0;
-    //    var momentumID;
-       
-    //    slider.addEventListener('wheel', (e) => {
-    //        cancelMomentumTracking();
-    //    });  
-       
-    //    function beginMomentumTracking(){
-    //        cancelMomentumTracking();
-    //        momentumID = requestAnimationFrame(momentumLoop);
-    //    }
-       
-    //    function cancelMomentumTracking(){
-    //        cancelAnimationFrame(momentumID);
-    //    }
-       
-    //    function momentumLoop(){
-    //        slider.scrollLeft += velX * 2;
-    //        velX *= 0.95; 
-    //        if (Math.abs(velX) > 0.5){
-    //            momentumID = requestAnimationFrame(momentumLoop);
-    //        }
-    //    }
