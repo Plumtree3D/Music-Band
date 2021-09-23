@@ -142,27 +142,3 @@ artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment"+artMoment+"</h2>";
 catch (err) {console.log(err);}
 })
 .catch((err) =>{ console.log(err)});
-
-
-
-
-
-
-
-
-
-
-//ici on chope l'artiste du moment
-
-// const artMoment = response.artists.data[0].name;
-// console.log(artMoment);
-// const artMomentPicture = response.artists.data[0].picture_xl;
-// let artMomentDiv = document.createElement("div");
-// document.getElementById('artistMoment').appendChild(artMomentDiv);
-// artMomentDiv.style.background = artMomentPicture;
-// artMomentDiv.innerHTML = '<h2>'+artMoment+'</h2>';
-
-
-
-
-
