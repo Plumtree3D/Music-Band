@@ -1,12 +1,15 @@
-*{
+/* *{
    box-sizing: border-box;
    border: 1px solid lightseagreen; 
-}
+} */
 
 
 body{
-    background-color: #16151A;
+    
+    background-color: #1a1515;
     color: white;
+    max-width: 1440px;
+    margin: 0;
 }
 nav{
     background-color: white;
@@ -39,16 +42,15 @@ header{
     height: 70vh;
 }
 header div{
-
     width: 40vw;
-
 }
 /* #genres {
     
 } */
 #genreList{
     display: flex;
-    width: 500px;
+    width: 100%;
+    overflow: hidden;
 
 }
 #genreList div{
@@ -58,6 +60,7 @@ header div{
 #top10{
     display: flex;
 }
+
 #chartListArtists{
 display: flex;
 flex-direction: column;
@@ -71,10 +74,8 @@ margin: 15px;
 
 
 /* ça marche pas (encore) */
-#chartListAlbums div::after, #chartListArtists div::after{
-    content: '';
-    flex: 1 1 auto; /* the first digint is 'flex-grow: 1', helps elemet to occupy all free space */ 
-    border-bottom: solid 1px #c4c4c4;
+#chartListAlbums div, #chartListArtists div{
+border-bottom: rgb(143, 143, 143) solid 1px;
 }
 
 #artistMoment{
@@ -91,7 +92,4 @@ footer{
 footer div{
     width: 33%;
 }
-
-
-
 

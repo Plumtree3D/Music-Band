@@ -95,46 +95,57 @@ const response = await responseData.json();
 console.log(response);
 try{
     for (i=0; i<=10; i++){
-const chartName = "<span>"+response.artists.data[i].name+"</span>";
+const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
+const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
 const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">'; 
 let chartItemArtist = document.createElement("div");
+
 chartListArtists.appendChild(chartItemArtist);
-chartItemArtist.innerHTML = chartPicture+chartName;
+chartItemArtist.classList.add('artist');
+chartItemArtist.innerHTML = chartPicture+chartSong+chartName;
 // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
-}
 
-}
-catch (err) {console.log(err);}
-})
-.catch((err) =>{ console.log(err)});
-
-
-
-
-
-
-//on chope les albums, on se répète par rapport aux artistes, faudrait voir à mieux optimiser tout ça
-let chartListAlbums = document.getElementById('chartListAlbums')
-
-const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
-deezerTopAlbum
-.then(async(responseData)=>{
-// console.log(responseData);
-const response = await responseData.json();
-console.log(response);
-try{
-    for (i=0; i<=10; i++){
-const chartAlbum = "<span>"+response.albums.data[i].title+" </span>";
+const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
 const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
 const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
 let chartItemAlbum = document.createElement("div");
 chartListAlbums.appendChild(chartItemAlbum);
+chartItemAlbum.classList.add('album');
 chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
-// document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
-}}
+}
+
+}
 catch (err) {console.log(err);}
 })
 .catch((err) =>{ console.log(err)});
+
+
+
+
+
+
+// //on chope les albums, on se répète par rapport aux artistes, faudrait voir à mieux optimiser tout ça
+// let chartListAlbums = document.getElementById('chartListAlbums')
+
+// const deezerTopAlbum = fetch("https://api.deezer.com/chart", myOptions);
+// deezerTopAlbum
+// .then(async(responseData)=>{
+// // console.log(responseData);
+// const response = await responseData.json();
+// console.log(response);
+// try{
+//     for (i=0; i<=10; i++){
+// const chartAlbum = "<span>"+response.albums.data[i].title+" </span>";
+// const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
+// const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">'; 
+// let chartItemAlbum = document.createElement("div");
+// chartListAlbums.appendChild(chartItemAlbum);
+// chartItemAlbum.innerHTML = chartPictureAlbum+chartAlbum+chartArtist;
+// // document.getElementById('genreName').innerHTML += '<img src="'+genrePicture+'"> '+genreName;
+// }}
+// catch (err) {console.log(err);}
+// })
+// .catch((err) =>{ console.log(err)});
 
 
 
