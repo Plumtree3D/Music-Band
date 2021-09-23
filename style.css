@@ -123,6 +123,9 @@ footer div {
     left: 863px;
     top: 13px;
     background: #F0F5F9;
+    align-items: center;
+    display: flex;
+    padding-left: 10px;
 
 
 
