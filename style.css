@@ -1,4 +1,5 @@
 
+
 /* //////////////////////////////////
 
 
@@ -14,14 +15,13 @@
 
 body{
     font-family: 'Urbanist', sans-serif;
-    
     background-color: #1a1515;
     color: white;
     margin: 0;
     max-width: 1440px;
     margin: auto; 
 }
-nav{
+nav {
     background-color: white;
     height: 64px;
     width: 100%;
@@ -29,24 +29,27 @@ nav{
     top: 0;
     color: #3BC8E7;
 }
-h1{
+h1 {
     font-size: 96px;
 }
+
 h2{
     margin-left: 15px;
     font-size: large;
 
 }
-span{
-    color: #3BC8E7;  
+
+
+span {
+    color: #3BC8E7;
 }
-button{
+button {
     border: 3px solid #3BC8E7;
     box-sizing: border-box;
     width: 236px;
     height: 40px;
 }
-header{
+header {
     display: flex;
     align-items: center;
     background-image: url(./img/image3.jpg);
@@ -65,7 +68,6 @@ header div{
     width: 90%;
     overflow: hidden;
 }
-
 #genreList div img {
     width: 145px;
     margin: 10px;
@@ -80,10 +82,8 @@ header div{
     margin: 10px;
     color: white;
     font-weight: 400;
-
 }
-
-#top10{
+#top10 {
     display: flex;
     background: linear-gradient(0deg, rgba(47,47,47,0.468207351299895) 70%, rgba(0,0,0,0.47) 100%);
     padding: 0 5% 0 5%;
@@ -108,20 +108,75 @@ width: 50%;
     margin: 0 15px 10px 15px;
 }
 
-
-
 #artistMoment{
     display: flex;
     height: 70vh;
     width: 100%;
 }
-
-
-
-footer{
+footer {
     display: flex;
 }
-footer div{
+footer div {
     width: 33%;
 }
+/* CSS Tommy */
 
+
+.menuburger {
+
+    position: absolute;
+    width: 65px;
+    height: 64px;
+    left: 0px;
+    top: 0px;
+    background: #3BC8E7;
+}
+
+.musicband {
+
+    position: absolute;
+    width: 205px;
+    height: 30px;
+    left: 88px;
+    top: 19px;
+
+
+
+}
+
+.searchbar {
+
+    position: absolute;
+    width: 358px;
+    height: 38px;
+    left: 863px;
+    top: 13px;
+    background: #F0F5F9;
+
+
+
+}
+
+.avatar {
+
+    width: 31px;
+    height: 31px;
+    background-image: url("https://placeimg.com/160/160/any");
+    background-size: contain;
+    border-radius: 50%;
+    position: absolute;
+    width: 31px;
+    height: 31px;
+    left: calc(50% - 31px/2 + 576.5px);
+    top: 17px;
+}
+
+.user {
+
+    position: absolute;
+    width: 37px;
+    height: 17px;
+    left: calc(50% - 37px/2 + 628.5px);
+    top: 24px;
+
+  }
