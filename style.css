@@ -111,8 +111,8 @@ footer div {
     height: 30px;
     left: 88px;
     top: 19px;
-    display: flex;
     align-items: center;
+    font-size: 14px;
 
 
 
@@ -181,12 +181,12 @@ footer div {
 .casque {
 
     position: absolute;
+    right: 0;
     width: 29px;
     height: 29px;
-    left: 1188px;
-    top: 17px;
     background: #3BC8E7;
     border-radius: 2px;
+    margin-right: 5px;
 
 
 }
