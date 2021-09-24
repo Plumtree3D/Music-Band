@@ -15,10 +15,10 @@
 <body>
     <nav>
         <div class="menuburger"></div>
-        <div class="musicband">  Music Band </br> La musique au bout des doigts</div>
-        <div class="searchbar">Recherchez, écoutez...<div class="casque">      </div>
+        <div class="musicband">  <b> Music Band </b> </br> La musique au bout des doigts </div>
+        <div class="searchbar"> Recherchez, écoutez... <div class="casque">      </div>
         <div class="avatar"></div>
-        <div class="user">Alain</div>
+        <div class="user"> Alain </div>
     </nav>
     <header>
         <div>
