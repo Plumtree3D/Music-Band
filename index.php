@@ -48,13 +48,11 @@
     </section>
 
 
-    <section id="artistMoment"></section>
-    <section id="topPlaylists">
-        <h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2>
-    </section>
-    <section id="topPodcasts">
-        <h2><span>Revivez</span> vos émissions de radio préférées</h2>
-    </section>
+
+    <section id="artistMoment"><div class="playButtonBig"></div></section>
+    <section id="topPlaylists"><h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2></section>
+    <section id="topPodcasts"><h2><span>Revivez</span> vos émissions de radio préférées</h2></section>
+
 
 
     <footer>
@@ -87,11 +85,6 @@
             </div>
         </div>
     </footer>
-
-
-
-
-
 
 
 

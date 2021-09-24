@@ -1,8 +1,26 @@
-body {
-    background-color: #16151A;
-    color: white;
-}
 
+
+/* //////////////////////////////////
+
+
+
+
+/* *{
+   box-sizing: border-box;
+   border: 1px solid lightseagreen; 
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;400;800&display=swap');
+
+
+body{
+    font-family: 'Urbanist', sans-serif;
+    background-color: #1a1515;
+    color: white;
+    margin: 0;
+    max-width: 1440px;
+    margin: auto; 
+}
 nav {
     background-color: white;
     height: 64px;
@@ -11,22 +29,26 @@ nav {
     top: 0;
     color: #3BC8E7;
 }
-
 h1 {
     font-size: 96px;
 }
 
+h2{
+    margin-left: 15px;
+    font-size: large;
+
+}
+
+
 span {
     color: #3BC8E7;
 }
-
 button {
     border: 3px solid #3BC8E7;
     box-sizing: border-box;
     width: 236px;
     height: 40px;
 }
-
 header {
     display: flex;
     align-items: center;
@@ -34,63 +56,70 @@ header {
     height: 80vh;
     
 }
-
-header div {
-
+header div{
     width: 40vw;
-
 }
 
-#genres {}
+#genres {
+    margin: 5%;
+}
 
-#genreList {
+#genreList{
     display: flex;
-
+    width: 90%;
+    overflow: hidden;
+}
+#genreList div img {
+    width: 145px;
+    margin: 10px;
 }
 
 #genreList div {
-    margin: 23px auto;
+    display: flex;
+    flex-direction: column;
 }
 
+#genreList div span {
+    margin: 10px;
+    color: white;
+    font-weight: 400;
+}
 #top10 {
     display: flex;
+    background: linear-gradient(0deg, rgba(47,47,47,0.468207351299895) 70%, rgba(0,0,0,0.47) 100%);
+    padding: 0 5% 0 5%;
 }
 
-#chartListArtists {
+#chartListArtists, #chartListAlbums {
+display: flex;
+flex-direction: column;
+margin: 15px;
+width: 50%; 
+}
+
+.artist, .album {
     display: flex;
-    flex-direction: column;
-    margin: 15px;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: #cacaca41 solid 1px;
+    margin-top: 15px;
 }
 
-#chartListAlbums {
+.artist img, .album img {
+    margin: 0 15px 10px 15px;
+}
+
+#artistMoment{
     display: flex;
-    flex-direction: column;
-    margin: 15px;
+    height: 70vh;
+    width: 100%;
 }
-
-
-/* ça marche pas (encore) */
-#chartListAlbums div::after,
-#chartListArtists div::after {
-    content: '';
-    flex: 1 1 auto;
-    /* le premier chiffre est 'flex-grow: 1', aide l'element à occuper tout l'espace libre */
-    border-bottom: solid 1px #c4c4c4;
-}
-
-
-
-
 footer {
     display: flex;
 }
-
 footer div {
     width: 33%;
 }
-
-
-
 /* CSS Tommy */
 
 
@@ -156,6 +185,7 @@ footer div {
     left: calc(50% - 37px/2 + 628.5px);
     top: 24px;
 
+
 }
 
 .leftFooter {
@@ -190,3 +220,4 @@ footer div {
 
 
 }
+
