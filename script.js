@@ -58,7 +58,6 @@ chartListArtists.appendChild(chartItemArtist);
 chartItemArtist.classList.add('artist');
 chartItemArtist.innerHTML = count+chartPicture+chartSong+chartName;
 chartItemArtist.addEventListener('click', function () {
-
 })
 
 //on chope les albums
