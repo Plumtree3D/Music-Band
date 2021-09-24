@@ -63,7 +63,7 @@ listContainer.innerHTML = count+chartPicture
 chartItemArtist.innerHTML = chartSong+chartName;
 //Quand on clique on kiffe
 
-})
+
 
 //on chope les albums
 const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
