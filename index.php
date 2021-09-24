@@ -16,7 +16,7 @@
     <nav>
         <div class="menuburger"><img src="SVG/MENU.svg"></div>
         <div class="musicband"> <b> Music Band </b> </br> La musique au bout des doigts </div>
-        <div class="searchbar"> Recherchez, écoutez... <div class="casque"><img src="SVG/Vector.svg"></div>
+        <div class="searchbar"> Recherchez, écoutez... <div class="casque"><img class="displayed" src="SVG/Vector.svg"></div>
             <div class="avatar"> </div>
             <div class="user"> <b>Alain</b> </div>
 
@@ -66,16 +66,16 @@
     <footer>
         <div class="leftFooter">
             <div class="musicband"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed ante sit amet mi fermentum
-                accumsan. Nulla tristique, lorem eget accumsan efficitur, enim ipsum venenatis massa, mattis eleifend
-                dui nibh sed sem. Vivamus nec quam turpis. Integer auctor leo at convallis malesuada. Praesent cursus
-                feugiat ligula et tristique. Vivamus in velit nec nibh venenatis semper id eu ligula. Nullam dignissim
-                vehicula tempor. Quisque a elementum purus. Maecenas condimentum arcu non nulla feugiat pharetra. Nunc
-                aliquam enim augue, ultricies porta nulla maximus sed.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur </br> adipiscing elit. Vestibulum sed ante sit amet mi </br> fermentum
+                accumsan. Nulla tristique, lorem eget </br> accumsan efficitur, enim ipsum venenatis massa, </br> mattis eleifend
+                dui nibh sed sem. Vivamus nec </br> quam turpis. Integer auctor leo at convallis </br> malesuada. Praesent cursus
+                feugiat ligula et </br> tristique. Vivamus in velit nec nibh venenatis </br> semper id eu ligula. Nullam dignissim
+                vehicula </br> tempor. Quisque a elementum purus. Maecenas </br> condimentum arcu non nulla feugiat pharetra. </br> Nunc
+                aliquam enim augue, ultricies porta nulla </br> maximus sed.</p>
         </div>
         <div class="middleFooter">
             <h2>Inscrivez vous à la Newsletter</h2>
-            <p>Abonnez-vous à notre newsletter et recevez les dernières mises à jour et offres.</p>
+            <p>Abonnez-vous à notre newsletter et recevez </br> les dernières mises à jour et offres.</p>
             <form action="" method="post">
                 <input type="name">
                 <input type="e-mail">
@@ -84,12 +84,12 @@
         </div>
         <div class="rightFooter">
             <h2>Nous contacter</h2>
-            <p>Vous souhaitez nous contacter. Plusieurs solutions s'offrent à vous</p>
+            <p>Vous souhaitez nous contacter. </br> Plusieurs solutions s'offrent à vous</p>
             <div class="tel">
-                <p>Par téléphone au: <a href="tel:+33389878586">03 89 87 85 86</a></p>
+                <p>Par téléphone au: </br> <a href="tel:+33389878586">03 89 87 85 86</a></p>
             </div>
             <div class="mail">
-                <p>Par email au: <a href="mailto:contact@musicband.com">contact@musicband.com</a></p>
+                <p>Par email au: </br> <a href="mailto:contact@musicband.com">contact@musicband.com</a></p>
             </div>
         </div>
     </footer>

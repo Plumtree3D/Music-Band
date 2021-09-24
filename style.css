@@ -184,7 +184,7 @@ footer div {
     position: absolute;
     left: 430px;
 
-    
+
 }
 
 .user {
@@ -192,21 +192,30 @@ footer div {
     position: absolute;
     left: 480px;
 }
-.leftFooter {
 
+.leftFooter {
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1px;
     background: linear-gradient(180deg, rgb(22 21 26), rgb(99 99 99));
 
 }
 
 .middleFooter {
-
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1px;
     background: linear-gradient(180deg, rgb(22 21 26), rgb(99 99 99));
 
 }
 
 .rightFooter {
-
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: 1px;
     background: linear-gradient(180deg, rgb(22 21 26), rgb(99 99 99));
+    left: 1013px;
+    top: 3831px;
 }
 
 .casque {
@@ -218,5 +227,14 @@ footer div {
     background: #3BC8E7;
     border-radius: 2px;
     margin-right: 5px;
+
+}
+
+IMG.displayed {
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 
 }
