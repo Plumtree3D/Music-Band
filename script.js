@@ -52,8 +52,9 @@ try{
 const count = (i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
-const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">';
+const chartPicture = '<img src="'+response.tracks.data[i].artist.picture_small+'">';
 let chartItemArtist = document.createElement("div");
+
 let listContainer = document.createElement("div");
 chartListArtists.appendChild(listContainer);
 listContainer.appendChild(chartItemArtist);
@@ -61,6 +62,7 @@ listContainer.classList.add('artist');
 listContainer.innerHTML = count+chartPicture
 chartItemArtist.innerHTML = chartSong+chartName;
 //Quand on clique on kiffe
+
 
 
 //on chope les albums
