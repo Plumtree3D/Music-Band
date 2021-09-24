@@ -53,16 +53,25 @@ const count = (i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGroupin
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
 const chartPicture = '<img src="'+response.tracks.data[i].artist.picture_small+'">';
+const songDuration = '<p class="duration">'+fancyTimeFormat(response.tracks.data[i].duration)+'</p>';
+// const songDurationA = fancyTimeFormat(songDuration);
+console.log(fancyTimeFormat(response.tracks.data[i].duration))
 let chartItemArtist = document.createElement("div");
-
-
 let listContainer = document.createElement("div");
+let songDurationDiv = document.createElement("div");
+listContainer.classList.add('artist');
+listContainer.innerHTML = count+chartPicture;
 chartListArtists.appendChild(listContainer);
 listContainer.appendChild(chartItemArtist);
-listContainer.classList.add('artist');
-listContainer.innerHTML = count+chartPicture
+listContainer.appendChild(songDurationDiv);
+songDurationDiv.innerHTML = songDuration;
+chartItemArtist.classList.add('nomArtiste');
 chartItemArtist.innerHTML = chartSong+chartName;
+
+
+
 //Quand on clique on kiffe
+
 
 
 
@@ -143,9 +152,34 @@ console.log(artMoment);
 const artMomentPicture = response.artists.data[0].picture_xl;
 let artMomentDiv = document.createElement("div");
 document.getElementById('artistMoment').appendChild(artMomentDiv);
-document.getElementById('artistMoment').style.cssText = "background: url('"+artMomentPicture+"');";
-artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment"+artMoment+"</h2>";
+document.getElementById('artistMoment').style.cssText = "background-image: url('"+artMomentPicture+"');";
+artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment "+artMoment+"</h2>";
 }
 catch (err) {console.log(err);}
 })
 .catch((err) =>{ console.log(err)});
+
+
+
+
+
+//conversion des secondes en minutes que j'ai piqué parce que bon hein
+
+function fancyTimeFormat(duration)
+{   
+    // Hours, minutes and seconds
+    var hrs = ~~(duration / 3600);
+    var mins = ~~((duration % 3600) / 60);
+    var secs = ~~duration % 60;
+
+    // Output like "1:01" or "4:03:59" or "123:03:59"
+    var ret = "";
+
+    if (hrs > 0) {
+        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+    }
+
+    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+    return ret;
+}

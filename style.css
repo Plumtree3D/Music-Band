@@ -110,8 +110,13 @@ width: 50%;
 
 #artistMoment{
     display: flex;
-    height: 70vh;
     width: 100%;
+    background: center;
+    background-repeat: no-repeat;
+    height: 404px;
+    max-width:1440px; 
+    background-size: cover; 
+    
 }
 footer {
     display: flex;
@@ -123,7 +128,6 @@ footer div {
 
 
 .menuburger {
-
     position: absolute;
     width: 65px;
     height: 64px;
@@ -133,7 +137,6 @@ footer div {
 }
 
 .musicband {
-
     position: absolute;
     width: 205px;
     height: 30px;
