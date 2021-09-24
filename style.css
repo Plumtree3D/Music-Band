@@ -63,6 +63,7 @@ header {
 
 header div {
     width: 40vw;
+    margin-left: 70px;
 }
 
 #genres {

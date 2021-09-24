@@ -15,19 +15,20 @@
 <body>
     <nav>
         <div class="menuburger"><img src="SVG/MENU.svg"></div>
-        <div class="musicband">  <b> Music Band </b> </br> La musique au bout des doigts </div>
+        <div class="musicband"> <b> Music Band </b> </br> La musique au bout des doigts </div>
         <div class="searchbar"> Recherchez, écoutez... <div class="casque"><img src="SVG/Vector.svg"></div>
-        <div class="avatar">  </div>
-        <div class="user"> <b>Alain</b> </div>
-        
+            <div class="avatar"> </div>
+            <div class="user"> <b>Alain</b> </div>
+
     </nav>
     <header>
         <div>
             <h1><span>Music</span> Band</h1>
             <p>Votre musique sans pub, partout. Seulement 9,99€/mois ensuite. </br> Soumis à conditions. Des podcasts
-                exclusifs. </br> Des playlists sur-mesure. Faites des découvertes. </br> Zappez à volonté. Plus de 50 milliards de
+                exclusifs. </br> Des playlists sur-mesure. Faites des découvertes. </br> Zappez à volonté. Plus de 50
+                milliards de
                 chansons. </br> Annulation tout de suite! </p>
-
+            </br>
             <button>commencer l'écoute</button>
             <button>s'abonner</button>
         </div>
@@ -50,9 +51,15 @@
 
 
 
-    <section id="artistMoment"><div class="playButtonBig"></div></section>
-    <section id="topPlaylists"><h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2></section>
-    <section id="topPodcasts"><h2><span>Revivez</span> vos émissions de radio préférées</h2></section>
+    <section id="artistMoment">
+        <div class="playButtonBig"></div>
+    </section>
+    <section id="topPlaylists">
+        <h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2>
+    </section>
+    <section id="topPodcasts">
+        <h2><span>Revivez</span> vos émissions de radio préférées</h2>
+    </section>
 
 
 
