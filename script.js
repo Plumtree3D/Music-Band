@@ -8,7 +8,7 @@
 let genresHtml = document.getElementById('genreList');
 
 var myOptions = { method: 'GET',
-                Headers: 'Access-Control-Allow-Origin: *',
+                // Headers: 'Access-Control-Allow-Origin: *',
                 referrerPolicy: 'origin-when-cross-origin',
                mode: 'cors',
                cache: 'default' };
@@ -54,8 +54,7 @@ const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
 const chartPicture = '<img src="'+response.tracks.data[i].artist.picture_small+'">';
 const songDuration = '<p class="duration">'+fancyTimeFormat(response.tracks.data[i].duration)+'</p>';
-// const songDurationA = fancyTimeFormat(songDuration);
-console.log(fancyTimeFormat(response.tracks.data[i].duration))
+// console.log(fancyTimeFormat(response.tracks.data[i].duration))
 let chartItemArtist = document.createElement("div");
 let listContainer = document.createElement("div");
 let songDurationDiv = document.createElement("div");
@@ -80,9 +79,16 @@ const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
 const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
 const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">';
 let chartItemAlbum = document.createElement("div");
+let chartItemTitre = document.createElement("div");
+
 chartListAlbums.appendChild(chartItemAlbum);
 chartItemAlbum.classList.add('album');
-chartItemAlbum.innerHTML = count+chartPictureAlbum+chartAlbum+chartArtist;
+chartItemTitre.classList.add('nomArtiste');
+chartItemAlbum.innerHTML = count+chartPictureAlbum;
+
+chartItemAlbum.appendChild(chartItemTitre);
+chartItemTitre.innerHTML = chartAlbum+chartArtist;
+
 }
 
 }
