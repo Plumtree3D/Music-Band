@@ -13,7 +13,7 @@
 
 body {
     font-family: 'Urbanist', sans-serif;
-    background-color: #1a1515;
+    background-color: #16151A;
     color: white;
     margin: 0;
     max-width: 1440px;
@@ -33,7 +33,10 @@ nav {
 }
 
 h1 {
+    
     font-size: 96px;
+    
+    
 }
 
 h2 {
@@ -64,6 +67,7 @@ header {
 header div {
     width: 40vw;
     margin-left: 70px;
+    margin-bottom: -130px;
 }
 
 #genres {
@@ -210,6 +214,9 @@ footer div {
 }
 
 .rightFooter {
+
+
+
     font-size: 14px;
     line-height: 17px;
     letter-spacing: 1px;
@@ -230,11 +237,43 @@ footer div {
 
 }
 
-IMG.displayed {
+.textheader {
 
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    letter-spacing: 1px;
+    margin-left: 0px;
+    size: 16px;
+    height: 125px;
+    left: 65px;
+    top: 524px;
+    line-height: 25px;
+    margin-bottom: 50px;
 
+
+}
+.musicband {
+
+
+
+}
+
+#sub {
+
+    font-family: "Open Sans";
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: transparent;
+    text-transform: uppercase;
+    margin-left: 10px;
+    size: 14px;
+}
+
+#start {
+
+
+    font-family: "Open Sans";
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: #3BC8E7;
+    size: 14px;
 
 }
