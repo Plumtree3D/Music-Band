@@ -159,7 +159,7 @@ const artMomentPicture = response.artists.data[0].picture_xl;
 let artMomentDiv = document.createElement("div");
 document.getElementById('artistMoment').appendChild(artMomentDiv);
 document.getElementById('artistMoment').style.cssText = "background-image: url('"+artMomentPicture+"');";
-artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment "+artMoment+"</h2>";
+artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment <span>"+artMoment+"</span></h2>";
 }
 catch (err) {console.log(err);}
 })
