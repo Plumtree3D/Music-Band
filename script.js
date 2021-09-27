@@ -1,4 +1,3 @@
-
 //bonjour et bienvenue sur le Javascript
 
 
@@ -8,7 +7,7 @@
 let genresHtml = document.getElementById('genreList');
 
 var myOptions = { method: 'GET',
-                Headers: 'Access-Control-Allow-Origin: *',
+                // Headers: 'Access-Control-Allow-Origin: *',
                 referrerPolicy: 'origin-when-cross-origin',
                mode: 'cors',
                cache: 'default' };
@@ -52,15 +51,26 @@ try{
 const count = (i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGrouping:false});
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
-const chartPicture = '<img src="'+response.artists.data[i].picture_small+'">';
+const chartPicture = '<img src="'+response.tracks.data[i].artist.picture_small+'">';
+const songDuration = '<p class="duration">'+fancyTimeFormat(response.tracks.data[i].duration)+'</p>';
+// console.log(fancyTimeFormat(response.tracks.data[i].duration))
 let chartItemArtist = document.createElement("div");
 let listContainer = document.createElement("div");
+let songDurationDiv = document.createElement("div");
+listContainer.classList.add('artist');
+listContainer.innerHTML = count+chartPicture;
 chartListArtists.appendChild(listContainer);
 listContainer.appendChild(chartItemArtist);
-listContainer.classList.add('artist');
-listContainer.innerHTML = count+chartPicture
+listContainer.appendChild(songDurationDiv);
+songDurationDiv.innerHTML = songDuration;
+chartItemArtist.classList.add('nomArtiste');
 chartItemArtist.innerHTML = chartSong+chartName;
+
+
+
 //Quand on clique on kiffe
+
+
 
 
 //on chope les albums
@@ -68,9 +78,16 @@ const chartAlbum = "<p>"+response.albums.data[i].title+" </p>";
 const chartArtist = "<span>"+response.albums.data[i].artist.name+" </span>";
 const chartPictureAlbum = '<img src="'+response.albums.data[i].cover_small+'">';
 let chartItemAlbum = document.createElement("div");
+let chartItemTitre = document.createElement("div");
+
 chartListAlbums.appendChild(chartItemAlbum);
 chartItemAlbum.classList.add('album');
-chartItemAlbum.innerHTML = count+chartPictureAlbum+chartAlbum+chartArtist;
+chartItemTitre.classList.add('nomArtiste');
+chartItemAlbum.innerHTML = count+chartPictureAlbum;
+
+chartItemAlbum.appendChild(chartItemTitre);
+chartItemTitre.innerHTML = chartAlbum+chartArtist;
+
 }
 
 }
@@ -140,9 +157,34 @@ console.log(artMoment);
 const artMomentPicture = response.artists.data[0].picture_xl;
 let artMomentDiv = document.createElement("div");
 document.getElementById('artistMoment').appendChild(artMomentDiv);
-document.getElementById('artistMoment').style.cssText = "background: url('"+artMomentPicture+"');";
-artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment"+artMoment+"</h2>";
+document.getElementById('artistMoment').style.cssText = "background-image: url('"+artMomentPicture+"');";
+artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment <span>"+artMoment+"</span></h2>";
 }
 catch (err) {console.log(err);}
 })
 .catch((err) =>{ console.log(err)});
+
+
+
+
+
+//conversion des secondes en minutes que j'ai piqué parce que bon hein
+
+function fancyTimeFormat(duration)
+{   
+    // Hours, minutes and seconds
+    var hrs = ~~(duration / 3600);
+    var mins = ~~((duration % 3600) / 60);
+    var secs = ~~duration % 60;
+
+    // Output like "1:01" or "4:03:59" or "123:03:59"
+    var ret = "";
+
+    if (hrs > 0) {
+        ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
+    }
+
+    ret += "" + mins + ":" + (secs < 10 ? "0" : "");
+    ret += "" + secs;
+    return ret;
+}
