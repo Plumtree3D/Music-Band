@@ -5,6 +5,7 @@
 } */
 
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 body {
@@ -104,26 +105,94 @@ header div {
     flex-direction: column;
     margin: 15px;
     width: 50%;
+    margin-bottom: 15vh;
 }
 
 .artist,
 .album {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     border-bottom: #cacaca41 solid 1px;
-    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to top, #3bc7e750 50%, rgba(0, 0, 0, 0) 50%);
+    transition: 0.6s ease-out;
+}
+
+.artist:hover, .album:hover {
+    background-position: 0 100%;
+}
+
+.nomArtiste p{
+    font-weight: 600;
+    margin: 0;
+}
+
+.duration {
+    position: absolute;
+    right: 5px;
+    bottom: 15%;
+}
+
+.nomArtiste span {
+    
 }
 
 .artist img,
 .album img {
-    margin: 0 15px 10px 15px;
+    margin: 0 15px 0px 15px;
 }
 
 #artistMoment {
+    position: relative;
+    background: no-repeat center center;
+    background-size: cover;
     display: flex;
-    height: 70vh;
+    height: 400px;
     width: 100%;
+}
+
+#artistMoment h2 {
+    position: absolute;
+    bottom: 10%;
+    left: 12%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    margin: 0;
+}
+
+#artistMoment span {
+    text-transform: uppercase;
+    color: white;
+}
+
+.playButtonBig {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    width: 76px;
+    height: 76px;
+    background-color: #3BC8E7;
+    border-radius: 50%;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    cursor: pointer;
+}
+
+.triangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -50%);
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 17px solid transparent;
+    border-bottom : 17px solid transparent;
+    border-left : 26px solid white;
 }
 
 footer {
@@ -133,6 +202,16 @@ footer {
 footer div {
     width: 33%;
 }
+
+.player {
+    position: fixed;
+    bottom: 0;
+    width: 1440px;
+    height: 12vh;
+    background-color: #111013;
+}
+
+
 
 /* CSS Tommy */
 

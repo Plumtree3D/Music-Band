@@ -49,7 +49,7 @@
 
 
 
-    <section id="artistMoment"><div class="playButtonBig"></div></section>
+    <section id="artistMoment"><div class="playButtonBig"> <div class="triangle"></div></div> </section>
     <section id="topPlaylists"><h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2></section>
     <section id="topPodcasts"><h2><span>Revivez</span> vos émissions de radio préférées</h2></section>
 
@@ -84,7 +84,14 @@
                 <p>Par email au: <a href="mailto:contact@musicband.com">contact@musicband.com</a></p>
             </div>
         </div>
+        <div class="player"> 
+            <!-- <div class="playlistSurf"> <div id="backward"></div> </div> -->
+            <div class="playButtonBig"> <div id="playPauseBtn"></div></div> 
+            <div class="playlistSurf"> <div id="forward"></div> </div>
+        </div>
     </footer>
+
+   
 
 
 
