@@ -31,9 +31,9 @@
             <button>s'abonner</button>
         </div>
     </header>
-    <section id="genres">
+<section id="genres">
         <h2>Genre</h2>
-        <div id="genreList">
+        <div id="genreList" class="slider">
 
         </div>
     </section>
@@ -50,8 +50,15 @@
 
 
     <section id="artistMoment"><div class="playButtonBig"></div></section>
-    <section id="topPlaylists"><h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2></section>
-    <section id="topPodcasts"><h2><span>Revivez</span> vos émissions de radio préférées</h2></section>
+    <section id="Playlists" >
+    <h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2>
+        <div id="topPlaylists" class="slider"></div>
+    </section>
+    
+    <section id="Podcasts">
+    <h2><span>Revivez</span> vos émissions de radio préférées</h2>
+        <div id="topPodcasts" class="slider"></div>
+    </section>
 
 
 
