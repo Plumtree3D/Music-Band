@@ -188,3 +188,10 @@ function fancyTimeFormat(duration)
     ret += "" + secs;
     return ret;
 }
+
+
+////////////////////play/pause/////////////////////
+
+document.getElementById("playbtn").addEventListener("click", function() {
+    document.getElementById("playicon").classList.toggle("pauseButton");
+  }); 

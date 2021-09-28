@@ -84,10 +84,18 @@
                 <p>Par email au: <a href="mailto:contact@musicband.com">contact@musicband.com</a></p>
             </div>
         </div>
-        <div class="player"> 
-            <!-- <div class="playlistSurf"> <div id="backward"></div> </div> -->
-            <div class="playButtonBig"> <div id="playPauseBtn"></div></div> 
-            <div class="playlistSurf"> <div id="forward"></div> </div>
+
+        <div class="playerBar">
+
+            <div class="artist"></div>
+
+            <div class="player"> 
+                <div id="previous"></div>
+                <button class="playerButtonBig" id="playbtn">
+                    <div class="playButton" id="playicon"></div> 
+                </button>
+                <div id="next"></div>
+            </div>
         </div>
     </footer>
 

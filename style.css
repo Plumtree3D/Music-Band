@@ -170,16 +170,19 @@ header div {
     color: white;
 }
 
-.playButtonBig {
-    position: absolute;
-    bottom: 10%;
-    left: 5%;
+.playButtonBig, .playerButtonBig {
     width: 76px;
     height: 76px;
     background-color: #3BC8E7;
     border-radius: 50%;
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
     cursor: pointer;
+}
+
+.playButtonBig {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
 }
 
 .triangle {
@@ -203,21 +206,94 @@ footer div {
     width: 33%;
 }
 
-.player {
-    position: fixed;
-    bottom: 0;
+.playerBar {
+    background-color: #111013;
     width: 1440px;
     height: 12vh;
-    background-color: #111013;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playButton {
+    margin-left: 5px;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 17px solid transparent;
+    border-bottom : 17px solid transparent;
+    border-left : 26px solid white;
+    transition: 0.4s;
+}
+
+.pauseButton {
+    display : inline-block;
+    height : 27px;
+    width : 5px;
+    border: transparent;
+    border-left : double 26px white;
+}
+
+#previous {
+    margin-right: 2vw;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 12px solid transparent;
+    border-bottom : 12px solid transparent;
+    border-right : 17px solid white;
+}
+
+#previous:before {
+    position: absolute;
+    top: 50%;
+    transform: translate(-80%, -50%);
+    content: '';
+    width: auto;
+    height: 22px;
+    border-left: solid 4px #fff;
+    z-index: 1;
+}
+
+#next {
+    margin-left: 2vw;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 12px solid transparent;
+    border-bottom : 12px solid transparent;
+    border-left : 17px solid white;
+}
+
+#next:after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    width: auto;
+    height: 22px;
+    border-left: solid 4px #fff;
+    z-index: 1;
+}
 
 
 /* CSS Tommy */
 
+footer {
+    height: 35vh;
+}
+
 
 .menuburger {
-
     position: absolute;
     width: 65px;
     height: 64px;
