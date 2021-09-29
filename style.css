@@ -280,7 +280,7 @@ input::placeholder {
     text-align: 20px;
     color: #3BC8E7;
     padding-left: 25px;
-    
+
 }
 
 
@@ -300,17 +300,14 @@ input::placeholder {
 
 .btn {
 
-    size: 14px;
+    width: 186px;
+    height: 40px;
     font-family: "Open Sans";
     margin-top: 30px;
+    font-size: 14px;
 }
 
-.mail {
-
-   
-
-
-}
+.mail {}
 
 .icontel {
 
@@ -319,18 +316,18 @@ input::placeholder {
     height: 40px;
     padding-left: 3px;
     margin-right: 22px;
+
 }
 
 
 
 .iconmail {
 
-
     background: #3BC8E7;
     width: 40px;
     height: 40px;
     padding-left: 3px;
-
+    margin-right: 22px;
 
 }
 
@@ -388,4 +385,31 @@ input::placeholder {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 265px;
+    margin-bottom: 10px;
 }
+
+.mail {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 265px;
+
+}
+
+a[href^="tel"] {
+    color: inherit; /* Inherit text color of parent element. */
+    text-decoration: none; /* Remove underline. */
+    /* Additional css `propery: value;` pairs here */
+    color: #3BC8E7;
+}
+
+a[href^="mail"] {
+    color: inherit; /* Inherit text color of parent element. */
+    text-decoration: none; /* Remove underline. */
+    /* Additional css `propery: value;` pairs here */
+    color: #3BC8E7;
+  }
+
+

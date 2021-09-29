@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -99,7 +100,7 @@
             <form action="" method="post">
                 <input type="text" id="bname" name="name" required placeholder="Entrez votre nom">
                 <input type="e-mail" id="bmail" name="mail" required placeholder="Entrez votre email">
-                <button class="btn">Inscrivez-vous</button>
+                <button class="btn">INSCRIVEZ-VOUS</button>
             </form>
         </div>
         <div class="rightFooter">
@@ -107,15 +108,15 @@
             <p>Vous souhaitez nous contacter. </br> Plusieurs solutions s'offrent à vous</p>
             
             <div class="tel">
+
                 <div class="icontel"><img class="displayed3" src="SVG/Group.svg"> </div>
                 <p> Par téléphone au: </br> <a href="tel:+33389878586">03 89 87 85 86</a></p>
 
             </div>
 
-            <div class="iconmail"><img class="displayed2" src="SVG/Group2.svg"> </div>
-
             <div class="mail">
 
+                <div class="iconmail"><img class="displayed2" src="SVG/Group2.svg"> </div>
                 <p> Par email au: </br> <a href="mailto:contact@musicband.com">contact@musicband.com </a> </p>
 
             </div>
