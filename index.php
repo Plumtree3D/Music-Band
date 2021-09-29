@@ -18,10 +18,12 @@
 <body>
     <nav>
         <div class="menuburger"><img src="SVG/MENU.svg"></div>
-        <div class="musicband"> <b> Music Band </b> </br> La musique au bout des doigts </div>
-        <div class="searchbar"> Recherchez, écoutez... <div class="casque"><img class="displayed" src="SVG/Vector.svg"></div>
-            <div class="avatar"> </div>
-            <div class="user"> <b>Alain</b> </div>
+        <div class="ondes"><img src="SVG/MusicbandOnde.svg"></div>
+        <div class="musicband"><b> Music Band </b> </br> La musique au bout des doigts </div>
+        <div class="searchbar"> Recherchez, écoutez... <div class="casque"><img class="displayed" src="SVG/Vector.svg">
+            </div>
+            <div class="avatar"></div>
+            <div class="user"><b>Alain</b></div>
     </nav>
     <header>
         <div>
@@ -69,41 +71,57 @@
 
 
     <footer>
+        <!-- idee de merde a revoir ^^ -->
+        <!--<div class="mb"><b> Music Band </b> </br> La musique au bout des doigts </div>-->
         <div class="leftFooter">
-            <div class="musicband"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur </br> adipiscing elit. Vestibulum sed ante sit amet mi </br>
-                fermentum
-                accumsan. Nulla tristique, lorem eget </br> accumsan efficitur, enim ipsum venenatis massa, </br> mattis
-                eleifend
-                dui nibh sed sem. Vivamus nec </br> quam turpis. Integer auctor leo at convallis </br> malesuada.
-                Praesent cursus
-                feugiat ligula et </br> tristique. Vivamus in velit nec nibh venenatis </br> semper id eu ligula. Nullam
-                dignissim
-                vehicula </br> tempor. Quisque a elementum purus. Maecenas </br> condimentum arcu non nulla feugiat
-                pharetra. </br> Nunc
-                aliquam enim augue, ultricies porta nulla </br> maximus sed.</p>
+            <div class="musicband2"> <img src="SVG/LOGO.svg"> </div>
+
+            <div class="footertxt">
+                <p>Lorem ipsum dolor sit amet, consectetur </br> adipiscing elit. Vestibulum sed ante sit amet mi </br>
+                    fermentum
+                    accumsan. Nulla tristique, lorem eget </br> accumsan efficitur, enim ipsum venenatis massa, </br>
+                    mattis
+                    eleifend
+                    dui nibh sed sem. Vivamus nec </br> quam turpis. Integer auctor leo at convallis </br> malesuada.
+                    Praesent cursus
+                    feugiat ligula et </br> tristique. Vivamus in velit nec nibh venenatis </br> semper id eu ligula.
+                    Nullam
+                    dignissim
+                    vehicula </br> tempor. Quisque a elementum purus. Maecenas </br> condimentum arcu non nulla feugiat
+                    pharetra. </br> Nunc
+                    aliquam enim augue, ultricies porta nulla </br> maximus sed.
+                </p>
+            </div>
         </div>
         <div class="middleFooter">
             <h2>Inscrivez vous à la Newsletter</h2>
             <p>Abonnez-vous à notre newsletter et recevez </br> les dernières mises à jour et offres.</p>
             <form action="" method="post">
-                <input type="name">
-                <input type="e-mail">
-                <button>Inscrivez-vous</button>
+                <input type="text" id="bname" name="name" required placeholder="Entrez votre nom">
+                <input type="e-mail" id="bmail" name="mail" required placeholder="Entrez votre email">
+                <button class="btn">Inscrivez-vous</button>
             </form>
         </div>
         <div class="rightFooter">
             <h2>Nous contacter</h2>
             <p>Vous souhaitez nous contacter. </br> Plusieurs solutions s'offrent à vous</p>
+            
             <div class="tel">
-                <img src="SVG/Telephone.svg">
-                <p>Par téléphone au: </br> <a href="tel:+33389878586">03 89 87 85 86</a></p>
+                <div class="icontel"><img class="displayed3" src="SVG/Group.svg"> </div>
+                <p> Par téléphone au: </br> <a href="tel:+33389878586">03 89 87 85 86</a></p>
+
             </div>
+
+            <div class="iconmail"><img class="displayed2" src="SVG/Group2.svg"> </div>
+
             <div class="mail">
-                <p>Par email au: </br> <a href="mailto:contact@musicband.com">contact@musicband.com</a></p>
+
+                <p> Par email au: </br> <a href="mailto:contact@musicband.com">contact@musicband.com </a> </p>
+
             </div>
         </div>
     </footer>
+
 
 
 
