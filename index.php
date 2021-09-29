@@ -107,7 +107,7 @@
         <div class="rightFooter">
             <h2>Nous contacter</h2>
             <p>Vous souhaitez nous contacter. </br> Plusieurs solutions s'offrent à vous</p>
-            
+
             <div class="tel">
 
                 <div class="icontel"><img class="displayed3" src="SVG/Group.svg"> </div>
