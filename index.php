@@ -8,27 +8,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
     <title>Music-Band</title>
 
 </head>
 
 <body>
     <nav>
-        <div class="menuburger"></div>
-        <div class="musicband">  <b> Music Band </b> </br> La musique au bout des doigts </div>
-        <div class="searchbar"> Recherchez, écoutez... <div class="casque">      </div>
-        <div class="avatar"></div>
-        <div class="user"> Alain </div>
+        <div class="menuburger"><img src="SVG/MENU.svg"></div>
+        <div class="ondes"><img src="SVG/MusicbandOnde.svg"></div>
+        <div class="musicband"><b> Music Band </b> </br> La musique au bout des doigts </div>
+        <div class="searchbar"> Recherchez, écoutez... <div class="casque"><img class="displayed" src="SVG/Vector.svg">
+            </div>
+            <div class="avatar"></div>
+            <div class="user"><b>Alain</b></div>
     </nav>
     <header>
         <div>
             <h1><span>Music</span> Band</h1>
-            <p>Votre musique sans pub, partout. Seulement 9,99€/mois ensuite. Soumis à conditions. Des podcasts
-                exclusifs. Des playlists sur-mesure. Faites des découvertes. Zappez à volonté. Plus de 50 milliards de
-                chansons. Annulation tout de suite!</p>
-
-            <button>commencer l'écoute</button>
-            <button>s'abonner</button>
+            <div class="textheader">
+                <p>Votre musique sans pub, partout. Seulement 9,99€/mois ensuite. </br> Soumis à conditions. Des
+                    podcasts
+                    exclusifs. </br> Des playlists sur-mesure. Faites des découvertes. </br> Zappez à volonté. Plus de
+                    50
+                    milliards de
+                    chansons. </br> Annulation tout de suite! </p>
+            </div>
+            <button id="start">commencer l'écoute</button>
+            <button id="sub">s'abonner</button>
         </div>
     </header>
     <section id="genres">
@@ -49,42 +58,70 @@
 
 
 
-    <section id="artistMoment"><div class="playButtonBig"></div></section>
-    <section id="topPlaylists"><h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2></section>
-    <section id="topPodcasts"><h2><span>Revivez</span> vos émissions de radio préférées</h2></section>
+    <section id="artistMoment">
+        <div class="playButtonBig"></div>
+    </section>
+    <section id="topPlaylists">
+        <h2><span>Le top</span> des playlists à venir découvrir ou redécouvrir</h2>
+    </section>
+    <section id="topPodcasts">
+        <h2><span>Revivez</span> vos émissions de radio préférées</h2>
+    </section>
 
 
 
     <footer>
+        <!-- idee de merde a revoir ^^ -->
+        <!--<div class="mb"><b> Music Band </b> </br> La musique au bout des doigts </div>-->
         <div class="leftFooter">
-            <div class="musicband"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed ante sit amet mi fermentum
-                accumsan. Nulla tristique, lorem eget accumsan efficitur, enim ipsum venenatis massa, mattis eleifend
-                dui nibh sed sem. Vivamus nec quam turpis. Integer auctor leo at convallis malesuada. Praesent cursus
-                feugiat ligula et tristique. Vivamus in velit nec nibh venenatis semper id eu ligula. Nullam dignissim
-                vehicula tempor. Quisque a elementum purus. Maecenas condimentum arcu non nulla feugiat pharetra. Nunc
-                aliquam enim augue, ultricies porta nulla maximus sed.</p>
+            <div class="musicband2"> <img src="SVG/LOGO.svg"> </div>
+
+            <div class="footertxt">
+                <p>Lorem ipsum dolor sit amet, consectetur </br> adipiscing elit. Vestibulum sed ante sit amet mi </br>
+                    fermentum
+                    accumsan. Nulla tristique, lorem eget </br> accumsan efficitur, enim ipsum venenatis massa, </br>
+                    mattis
+                    eleifend
+                    dui nibh sed sem. Vivamus nec </br> quam turpis. Integer auctor leo at convallis </br> malesuada.
+                    Praesent cursus
+                    feugiat ligula et </br> tristique. Vivamus in velit nec nibh venenatis </br> semper id eu ligula.
+                    Nullam
+                    dignissim
+                    vehicula </br> tempor. Quisque a elementum purus. Maecenas </br> condimentum arcu non nulla feugiat
+                    pharetra. </br> Nunc
+                    aliquam enim augue, ultricies porta nulla </br> maximus sed.
+                </p>
+            </div>
         </div>
         <div class="middleFooter">
             <h2>Inscrivez vous à la Newsletter</h2>
-            <p>Abonnez-vous à notre newsletter et recevez les dernières mises à jour et offres.</p>
+            <p>Abonnez-vous à notre newsletter et recevez </br> les dernières mises à jour et offres.</p>
             <form action="" method="post">
-                <input type="name">
-                <input type="e-mail">
-                <button>Inscrivez-vous</button>
+                <input type="text" id="bname" name="name" required placeholder="Entrez votre nom">
+                <input type="e-mail" id="bmail" name="mail" required placeholder="Entrez votre email">
+                <button class="btn">Inscrivez-vous</button>
             </form>
         </div>
         <div class="rightFooter">
             <h2>Nous contacter</h2>
-            <p>Vous souhaitez nous contacter. Plusieurs solutions s'offrent à vous</p>
+            <p>Vous souhaitez nous contacter. </br> Plusieurs solutions s'offrent à vous</p>
+            
             <div class="tel">
-                <p>Par téléphone au: <a href="tel:+33389878586">03 89 87 85 86</a></p>
+                <div class="icontel"><img class="displayed3" src="SVG/Group.svg"> </div>
+                <p> Par téléphone au: </br> <a href="tel:+33389878586">03 89 87 85 86</a></p>
+
             </div>
+
+            <div class="iconmail"><img class="displayed2" src="SVG/Group2.svg"> </div>
+
             <div class="mail">
-                <p>Par email au: <a href="mailto:contact@musicband.com">contact@musicband.com</a></p>
+
+                <p> Par email au: </br> <a href="mailto:contact@musicband.com">contact@musicband.com </a> </p>
+
             </div>
         </div>
     </footer>
+
 
 
 
