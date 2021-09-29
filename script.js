@@ -6,6 +6,7 @@
 //on chope les genres
 let genresHtml = document.getElementById('genreList');
 
+
 var myOptions = {
     method: 'GET',
     // Headers: 'Access-Control-Allow-Origin: *',
@@ -195,6 +196,7 @@ let artistMoment = document.getElementById('artistMoment')
 
 const deezerartistMoment = fetch("https://api.deezer.com/chart", myOptions);
 deezerartistMoment
+
     .then(async (responseData) => {
         // console.log(responseData);
         const response = await responseData.json();
@@ -206,8 +208,8 @@ deezerartistMoment
             const artMomentPicture = response.artists.data[0].picture_xl;
             let artMomentDiv = document.createElement("div");
             document.getElementById('artistMoment').appendChild(artMomentDiv);
-            document.getElementById('artistMoment').style.cssText = "background-image: url('" + artMomentPicture + "');";
-            artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment <span>" + artMoment + "</span></h2>";
+            document.getElementById('artistMoment').style.cssText = "background-image: url('" + artMomentPicture + "')";
+            artMomentDiv.innerHTML = "<h2>Découvrez l'artiste du moment <br><span>" + artMoment + "</span></h2>";
         } catch (err) {
             console.log(err);
         }
@@ -221,11 +223,14 @@ deezerartistMoment
 
 
 //conversion des secondes en minutes que j'ai piqué parce que bon hein
+
 function fancyTimeFormat(duration) {
+
     // Hours, minutes and seconds
     var hrs = ~~(duration / 3600);
     var mins = ~~((duration % 3600) / 60);
     var secs = ~~duration % 60;
+
     // Output like "1:01" or "4:03:59" or "123:03:59"
     var ret = "";
     if (hrs > 0) {
