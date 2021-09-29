@@ -58,6 +58,7 @@
 
 
 
+
     <section id="artistMoment">
         <div class="playButtonBig"></div>
     </section>
@@ -120,7 +121,22 @@
 
             </div>
         </div>
+
+        <div class="playerBar">
+
+            <div class="artist"></div>
+
+            <div class="player"> 
+                <div id="previous"></div>
+                <button class="playerButtonBig" id="playbtn">
+                    <div class="playButton" id="playicon"></div> 
+                </button>
+                <div id="next"></div>
+            </div>
+        </div>
     </footer>
+
+   
 
 
 

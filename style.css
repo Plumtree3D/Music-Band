@@ -1,14 +1,11 @@
 /* //////////////////////////////////
-
-
-
-
 /* *{
    box-sizing: border-box;
    border: 1px solid lightseagreen; 
 } */
 
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@200;400;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
 body {
@@ -40,7 +37,9 @@ h1 {
 }
 
 h2 {
-    font-size: large;
+
+    margin-left: 15px;
+
 
 }
 
@@ -111,28 +110,96 @@ header div {
     flex-direction: column;
     margin: 15px;
     width: 50%;
-}
+
+    margin-bottom: 15vh;
+
 
 .artist,
 .album {
+
+    position: relative;
+
     display: flex;
     flex-direction: row;
     align-items: center;
     border-bottom: #cacaca41 solid 1px;
-    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to top, #3bc7e750 50%, rgba(0, 0, 0, 0) 50%);
+    transition: 0.6s ease-out;
+}
+
+.artist:hover, .album:hover {
+    background-position: 0 100%;
+}
+
+.nomArtiste p{
+    font-weight: 600;
+    margin: 0;
+}
+
+.duration {
+    position: absolute;
+    right: 5px;
+    bottom: 15%;
 }
 
 .artist img,
 .album img {
-    margin: 0 15px 10px 15px;
+    margin: 0 15px 0px 15px;
 }
 
 #artistMoment {
-    display: flex;
-    height: 70vh;
-    width: 100%;
+    position: relative;
+    background: no-repeat center center;
+    background-size: cover;
+
+
+
+#artistMoment h2 {
+    position: absolute;
+    bottom: 10%;
+    left: 12%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 36px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    margin: 0;
 }
 
+#artistMoment span {
+    text-transform: uppercase;
+    color: white;
+}
+
+.playButtonBig, .playerButtonBig {
+    width: 76px;
+    height: 76px;
+    background-color: #3BC8E7;
+    border-radius: 50%;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.466);
+    cursor: pointer;
+}
+
+.playButtonBig {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+}
+
+.triangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-35%, -50%);
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 17px solid transparent;
+    border-bottom : 17px solid transparent;
+    border-left : 26px solid white;
+}
+  
 footer {
     display: flex;
     height: 370px;
@@ -143,17 +210,100 @@ footer div {
     width: 34%;
 }
 
+.playerBar {
+    background-color: #111013;
+    width: 1440px;
+    height: 12vh;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playButton {
+    margin-left: 5px;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 17px solid transparent;
+    border-bottom : 17px solid transparent;
+    border-left : 26px solid white;
+    transition: 0.4s;
+}
+
+.pauseButton {
+    display : inline-block;
+    height : 27px;
+    width : 5px;
+    border: transparent;
+    border-left : double 26px white;
+}
+
+#previous {
+    margin-right: 2vw;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 12px solid transparent;
+    border-bottom : 12px solid transparent;
+    border-right : 17px solid white;
+}
+
+#previous:before {
+    position: absolute;
+    top: 50%;
+    transform: translate(-80%, -50%);
+    content: '';
+    width: auto;
+    height: 22px;
+    border-left: solid 4px #fff;
+    z-index: 1;
+}
+
+#next {
+    margin-left: 2vw;
+    display : inline-block;
+    height : 0;
+    width : 0;
+    border-top : 12px solid transparent;
+    border-bottom : 12px solid transparent;
+    border-left : 17px solid white;
+}
+
+#next:after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    width: auto;
+    height: 22px;
+    border-left: solid 4px #fff;
+    z-index: 1;
+}
+  
 /* CSS Tommy */
+
+footer {
+    height: 35vh;
+}
 
 
 .menuburger {
-
     position: absolute;
     width: 65px;
     height: 64px;
     left: 0px;
     top: 0px;
     background: #3BC8E7;
+
 
 }
 
@@ -175,7 +325,6 @@ footer div {
     top: 19px;
     align-items: center;
     font-size: 14px;
-
 }
 
 .musicband2 {
@@ -183,8 +332,6 @@ footer div {
     width: 230px;
     margin-left: 60px;
     margin-top: 31px;
-
-
 }
 
 .searchbar {
@@ -270,8 +417,6 @@ footer div {
     top: 524px;
     line-height: 25px;
     margin-bottom: 50px;
-
-
 }
 
 input::placeholder {
@@ -280,7 +425,6 @@ input::placeholder {
     text-align: 20px;
     color: #3BC8E7;
     padding-left: 25px;
-    
 }
 
 
