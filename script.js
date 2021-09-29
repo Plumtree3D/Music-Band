@@ -52,9 +52,12 @@ const count = (i+1).toLocaleString('en-US', {minimumIntegerDigits: 2, useGroupin
 const chartSong = "<p>"+response.tracks.data[i].title+"</p>";
 const chartName = "<span>"+response.tracks.data[i].artist.name+"</span>";
 const chartPicture = '<img src="'+response.tracks.data[i].artist.picture_small+'">';
+
 const songDuration = '<p class="duration">'+fancyTimeFormat(response.tracks.data[i].duration)+'</p>';
 // console.log(fancyTimeFormat(response.tracks.data[i].duration))
+
 let chartItemArtist = document.createElement("div");
+
 let listContainer = document.createElement("div");
 let songDurationDiv = document.createElement("div");
 listContainer.classList.add('artist');
@@ -69,8 +72,6 @@ chartItemArtist.innerHTML = chartSong+chartName;
 
 
 //Quand on clique on kiffe
-
-
 
 
 //on chope les albums
