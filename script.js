@@ -170,16 +170,24 @@ deezerTop
                 topPlaylist.innerHTML = chartPicturePlaylist + chartPlaylist;
                 
 
+                // const chartPodcast = "<p>" + response.podcasts.data[i].title + " </p>";
+                // const chartPicturePodcast = '<img src="' + response.podcasts.data[i].picture_medium + '" alt="'+response.podcasts.data[i].title+'">';
+                // const chartPodcastDesc = '<div class="description">'+response.podcasts.data[i].description +'</div><div class="overlay"></div>';
+                // let topPodcast = document.createElement("div");
+                
+                // topPodcasts.appendChild(topPodcast);
+                // let podcastOverlay = document.createElement("div");
+                // topPodcast.classList.add('item');
+                // topPodcast.innerHTML = chartPicturePodcast + chartPodcastDesc;
                 const chartPodcast = "<p>" + response.podcasts.data[i].title + " </p>";
-                const chartPicturePodcast = '<img src="' + response.podcasts.data[i].picture_medium + '">';
-                const chartPodcastDesc = '<p>'+response.podcasts.data[i].description +'</p><div class="bonjour"></div>';
-                let topPodcast = document.createElement("div");
-                
-                topPodcasts.appendChild(topPodcast);
-                let podcastOverlay = document.createElement("div");
-                topPodcast.classList.add('item');
-                topPodcast.innerHTML = chartPicturePodcast + chartPodcast + chartPodcastDesc;
-                
+const chartPicturePodcast = '<img src="' + response.podcasts.data[i].picture_medium + '">';
+const chartPodcastDesc = '<p>'+response.podcasts.data[i].description +'</p><div class="overlay"></div>';
+let topPodcast = document.createElement("div");
+
+topPodcasts.appendChild(topPodcast);
+let podcastOverlay = document.createElement("div");
+topPodcast.classList.add('item');
+topPodcast.innerHTML = chartPicturePodcast + chartPodcastDesc; 
             }
         } catch (err) {
             console.log(err);
@@ -240,3 +248,8 @@ function fancyTimeFormat(duration) {
     ret += "" + secs;
     return ret;
 }
+//JAVASCRIPT/// CELESTE DU FUTUR SUPPRIME PAS CA EN MERGE
+
+document.getElementById("playbtn").addEventListener("click", function() {
+document.getElementById("playicon").classList.toggle("pauseButton");
+});

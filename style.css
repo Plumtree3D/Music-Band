@@ -117,6 +117,7 @@ header div {
     width: 184px;
     margin: 10px;
 }
+
 #topPodcasts div img {
     width: 288px;
 }
@@ -320,7 +321,7 @@ header div {
     border-left: solid 4px #fff;
     z-index: 1;
 }
-  
+
 /* CSS Tommy */
 /* 
 footer {
@@ -571,5 +572,47 @@ input::placeholder {
     align-items: center;
 }
 
+/* overlay des podcasts */
 
-
+#topPodcasts .item {
+    position: relative;
+    transition: 0.6s;
+    text-align: center;
+    }
+    
+    
+    #topPodcasts .item p {
+    display: inline-block;
+    padding: 15px;
+    vertical-align: middle;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.6s ;
+    z-index: 3;
+    }
+    
+    #topPodcasts .item:hover p {
+    opacity: 1;
+    }
+    
+    #topPodcasts .item .overlay {
+    width: 288px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color:
+    #3BC8E7
+    ;
+    max-height: 0;
+    transition: max-height 0.6s ease-out;
+    overflow: hidden;
+    }
+    
+    #topPodcasts .item:hover .overlay {
+    height: 288px;
+    max-height: 288px;
+    transition: max-height 0.4s;
+    
+    } 
