@@ -23,7 +23,7 @@ deezerGenre
         try {
             for (i = 10; i > 0; i--) {
                 const genreName = "<span>" + response.data[i].name + "</span>";
-                const genrePicture = '<img src="' + response.data[i].picture + '">';
+                const genrePicture = '<img src="' + response.data[i].picture_medium + '">';
                 let genreItem = document.createElement("div");
                 genresHtml.appendChild(genreItem);
                 genreItem.innerHTML = genrePicture + genreName;
