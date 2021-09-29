@@ -80,11 +80,6 @@ function slide(x) {
 }
 
 
-
-
-
-
-
 //on chope les artistes, les albums, les playlists  et les émissions
 let chartListArtists = document.getElementById('chartListArtists')
 let chartListAlbums = document.getElementById('chartListAlbums')
@@ -107,8 +102,8 @@ deezerTopArtist
                 const chartSong = "<p>" + response.tracks.data[i].title + "</p>";
                 const chartName = "<span>" + response.tracks.data[i].artist.name + "</span>";
                 const chartPicture = '<img src="' + response.tracks.data[i].artist.picture_small + '">';
+                //la durée des morceaux est formatée par la fonction fancyTimeFormat
                 const songDuration = '<p class="duration">' + fancyTimeFormat(response.tracks.data[i].duration) + '</p>';
-                // console.log(fancyTimeFormat(response.tracks.data[i].duration))
                 let chartItemArtist = document.createElement("div");
                 let listContainer = document.createElement("div");
                 let songDurationDiv = document.createElement("div");
@@ -120,11 +115,6 @@ deezerTopArtist
                 songDurationDiv.innerHTML = songDuration;
                 chartItemArtist.classList.add('nomArtiste');
                 chartItemArtist.innerHTML = chartSong + chartName;
-
-
-
-                //Quand on clique on kiffe
-
 
 
 
@@ -177,20 +167,18 @@ deezerTop
                 topPlaylists.appendChild(topPlaylist);
                 topPlaylist.classList.add('item');
                 topPlaylist.innerHTML = chartPicturePlaylist + chartPlaylist;
-
-
+                
 
                 const chartPodcast = "<p>" + response.podcasts.data[i].title + " </p>";
                 const chartPicturePodcast = '<img src="' + response.podcasts.data[i].picture_medium + '">';
-                const chartPodcastDesc = '<p>'+response.podcasts.data[i].description +'</p>';
+                const chartPodcastDesc = '<p>'+response.podcasts.data[i].description +'</p><div class="bonjour"></div>';
                 let topPodcast = document.createElement("div");
                 
                 topPodcasts.appendChild(topPodcast);
                 let podcastOverlay = document.createElement("div");
-                topPodcasts.appendChild(podcastOverlay);
                 topPodcast.classList.add('item');
-                podcastOverlay.innerHTML = chartPodcastDesc;
-                topPodcast.innerHTML = chartPicturePodcast + chartPodcast;
+                topPodcast.innerHTML = chartPicturePodcast + chartPodcast + chartPodcastDesc;
+                
             }
         } catch (err) {
             console.log(err);
@@ -213,7 +201,6 @@ deezerartistMoment
         console.log(response);
         try {
             //ici on chope l'artiste du moment
-
             const artMoment = response.artists.data[0].name;
             console.log(artMoment);
             const artMomentPicture = response.artists.data[0].picture_xl;
@@ -234,20 +221,16 @@ deezerartistMoment
 
 
 //conversion des secondes en minutes que j'ai piqué parce que bon hein
-
 function fancyTimeFormat(duration) {
     // Hours, minutes and seconds
     var hrs = ~~(duration / 3600);
     var mins = ~~((duration % 3600) / 60);
     var secs = ~~duration % 60;
-
     // Output like "1:01" or "4:03:59" or "123:03:59"
     var ret = "";
-
     if (hrs > 0) {
         ret += "" + hrs + ":" + (mins < 10 ? "0" : "");
     }
-
     ret += "" + mins + ":" + (secs < 10 ? "0" : "");
     ret += "" + secs;
     return ret;
